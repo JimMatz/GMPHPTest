@@ -1,0 +1,67 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": false,
+        "autoSync": true,
+        "designer|userClassName": "store_Rgns",
+        "model": "model_Rgns",
+        "statefulFilters": true,
+        "storeId": "store_Rgns"
+    },
+    "configAlternates": {
+        "autoLoad": "boolean",
+        "autoSync": "boolean",
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string",
+        "statefulFilters": "boolean"
+    },
+    "name": "MyJsonStore1",
+    "designerId": "32fc4037-fab8-461a-ba1f-79578c925948",
+    "configMeta": {
+        "statefulFilters": {
+            "bindDeep": true
+        }
+    },
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "url": "/Gemini/AR/getAgeGroups.php?DB=GI"
+            },
+            "configAlternates": {
+                "url": "string"
+            },
+            "name": "MyAjaxProxy",
+            "designerId": "d61c19e0-0346-471e-8bb1-abc6cfe3d119",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "root"
+                    },
+                    "configAlternates": {
+                        "rootProperty": "string"
+                    },
+                    "name": "MyJsonReader",
+                    "designerId": "f14f8603-fccd-4e73-be47-f61958649c82"
+                }
+            ]
+        }
+    ]
+}

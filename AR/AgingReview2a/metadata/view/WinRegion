@@ -1,0 +1,728 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "winRegion",
+        "designer|userClassName": "WinRegion",
+        "height": 747,
+        "id": "winRegion",
+        "layout": "fit",
+        "title": "My Window",
+        "width": 1354
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "id": "string",
+        "layout": "string",
+        "title": "string",
+        "width": "auto"
+    },
+    "name": "MyWindow",
+    "designerId": "b417e346-5cc9-4174-b44d-ecec2b910442",
+    "viewControllerInstanceId": "b8bc2e60-1219-4dc7-bdce-43061617fcdc",
+    "viewModelInstanceId": "5bda3035-49f1-46a4-82fc-8050768df080",
+    "cn": [
+        {
+            "type": "Ext.grid.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "store": "storecbyr"
+            },
+            "configAlternates": {
+                "store": "store"
+            },
+            "name": "MyGridPanel2",
+            "designerId": "00e235ea-aaa1-4c16-ae20-4f0cd89b0ad8",
+            "cn": [
+                {
+                    "type": "Ext.view.Table",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyTable2",
+                    "designerId": "3bac94f1-e87a-411f-8255-250cbd4e5763"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "IVBLTO",
+                        "text": "Customer",
+                        "width": 69
+                    },
+                    "configAlternates": {
+                        "dataIndex": "datafield",
+                        "text": "string",
+                        "width": "auto"
+                    },
+                    "name": "MyColumn10",
+                    "designerId": "028db258-d44e-4b78-adca-ec52ee484dc9",
+                    "cn": [
+                        {
+                            "type": "Ext.grid.filters.filter.Number",
+                            "reference": {
+                                "name": "filter",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "MyNumberFilter",
+                            "designerId": "124ccdec-8f9a-465a-b853-9ddf8999e4cf"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "CMCNA1",
+                        "text": "Name",
+                        "width": 192
+                    },
+                    "configAlternates": {
+                        "dataIndex": "datafield",
+                        "text": "string",
+                        "width": "auto"
+                    },
+                    "name": "MyColumn11",
+                    "designerId": "17eab3ce-1064-488a-9da0-b120daab3abd",
+                    "cn": [
+                        {
+                            "type": "Ext.grid.filters.filter.String",
+                            "reference": {
+                                "name": "filter",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "MyStringFilter",
+                            "designerId": "15eb4b6d-59f7-45cb-beec-ca14a45206cd"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "IVPRI",
+                        "text": "AR<br>Pri",
+                        "width": 50
+                    },
+                    "configAlternates": {
+                        "dataIndex": "datafield",
+                        "text": "string",
+                        "width": "auto"
+                    },
+                    "name": "MyColumn12",
+                    "designerId": "959d340f-13b9-4d67-bb52-6692e609be44",
+                    "cn": [
+                        {
+                            "type": "Ext.grid.filters.filter.List",
+                            "reference": {
+                                "name": "filter",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "MyListFilter",
+                            "designerId": "35ae0b49-1207-4694-a550-e193c98270cd"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "align": "center",
+                        "text": "Credits"
+                    },
+                    "configAlternates": {
+                        "align": "string",
+                        "text": "string"
+                    },
+                    "name": "MyColumn9",
+                    "designerId": "024620fa-8769-4a1f-adee-8ee1b0553710",
+                    "cn": [
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "GRP_CR_AMT",
+                                "text": "Amount"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string"
+                            },
+                            "name": "MyColumn13",
+                            "designerId": "abad7248-fd00-46e8-b802-eef8c893b2b0",
+                            "cn": [
+                                {
+                                    "type": "Ext.grid.filters.filter.Number",
+                                    "reference": {
+                                        "name": "filter",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "name": "MyNumberFilter1",
+                                    "designerId": "d5fd5374-cb75-4fc0-9558-0cd2c69ca9a3"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "GRP_CR_CNT",
+                                "text": "#",
+                                "width": 40
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string",
+                                "width": "auto"
+                            },
+                            "name": "MyColumn14",
+                            "designerId": "e2318091-4024-4111-8274-7d601daca9f6"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "align": "center",
+                        "text": "Current"
+                    },
+                    "configAlternates": {
+                        "align": "string",
+                        "text": "string"
+                    },
+                    "name": "MyColumn32",
+                    "designerId": "db391167-f59b-4a4f-97ff-05c41dc919c6",
+                    "cn": [
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "GRP_0_AMT",
+                                "text": "Amount"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string"
+                            },
+                            "name": "MyColumn15",
+                            "designerId": "3df15bb0-86be-4640-836d-95c1abd5e725",
+                            "cn": [
+                                {
+                                    "type": "Ext.grid.filters.filter.Number",
+                                    "reference": {
+                                        "name": "filter",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "name": "MyNumberFilter2",
+                                    "designerId": "d2c39d06-8f7e-4a43-808e-7784ebe07e8f"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "GRP_0_CNT",
+                                "text": "#",
+                                "width": 40
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string",
+                                "width": "auto"
+                            },
+                            "name": "MyColumn16",
+                            "designerId": "4f6e8868-3021-4250-ada6-5434a672d4f0",
+                            "cn": [
+                                {
+                                    "type": "Ext.grid.filters.filter.Number",
+                                    "reference": {
+                                        "name": "filter",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "name": "MyNumberFilter3",
+                                    "designerId": "b2b00f6f-f438-444a-94ba-2c6f71a532dc"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "align": "center",
+                        "text": "1-15"
+                    },
+                    "configAlternates": {
+                        "align": "string",
+                        "text": "string"
+                    },
+                    "name": "MyColumn33",
+                    "designerId": "018ac6b3-adda-4db6-be18-e665fc211c71",
+                    "cn": [
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "GRP_1_AMT",
+                                "text": "Amount"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string"
+                            },
+                            "name": "MyColumn22",
+                            "designerId": "a56b01f0-f597-49d1-8ade-cd1148f6a100",
+                            "cn": [
+                                {
+                                    "type": "Ext.grid.filters.filter.Number",
+                                    "reference": {
+                                        "name": "filter",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "name": "MyNumberFilter4",
+                                    "designerId": "0e735642-25cf-41b1-996e-e7b3e7fc0de3"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "GRP_1_CNT",
+                                "text": "#",
+                                "width": 40
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string",
+                                "width": "auto"
+                            },
+                            "name": "MyColumn23",
+                            "designerId": "75e87235-cdf6-4d2a-a3b2-673c7fe191c3",
+                            "cn": [
+                                {
+                                    "type": "Ext.grid.filters.filter.Number",
+                                    "reference": {
+                                        "name": "filter",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "name": "MyNumberFilter5",
+                                    "designerId": "4d357261-62e6-41fa-854f-b315ee9c79d8"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "align": "center",
+                        "text": "16-30"
+                    },
+                    "configAlternates": {
+                        "align": "string",
+                        "text": "string"
+                    },
+                    "name": "MyColumn34",
+                    "designerId": "b1527783-6bcf-4293-b4b7-645747060e60",
+                    "cn": [
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "GRP_2_AMT",
+                                "text": "Amount"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string"
+                            },
+                            "name": "MyColumn24",
+                            "designerId": "c800d457-797a-4221-a080-d486d5e15688",
+                            "cn": [
+                                {
+                                    "type": "Ext.grid.filters.filter.Number",
+                                    "reference": {
+                                        "name": "filter",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "name": "MyNumberFilter6",
+                                    "designerId": "ae72e4a1-400b-4505-961c-4954f091669b"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "GRP_2_CNT",
+                                "text": "#",
+                                "width": 40
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string",
+                                "width": "auto"
+                            },
+                            "name": "MyColumn25",
+                            "designerId": "be147e39-ba1d-442c-bf8a-2817d2f750ca",
+                            "cn": [
+                                {
+                                    "type": "Ext.grid.filters.filter.Number",
+                                    "reference": {
+                                        "name": "filter",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "name": "MyNumberFilter7",
+                                    "designerId": "fc6aa0bd-fbcb-4dd4-b4d1-d131f3bb0087"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "align": "center",
+                        "text": "31-60"
+                    },
+                    "configAlternates": {
+                        "align": "string",
+                        "text": "string"
+                    },
+                    "name": "MyColumn35",
+                    "designerId": "64191036-3ec3-44d0-adbf-0d9d0f20f558",
+                    "cn": [
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "GRP_3_AMT",
+                                "text": "Amount"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string"
+                            },
+                            "name": "MyColumn26",
+                            "designerId": "8a004457-676f-41fd-bf1d-1a852223d530",
+                            "cn": [
+                                {
+                                    "type": "Ext.grid.filters.filter.Number",
+                                    "reference": {
+                                        "name": "filter",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "name": "MyNumberFilter8",
+                                    "designerId": "febf1de0-fbfa-412e-9169-d90504bceb73"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "GRP_3_CNT",
+                                "text": "#",
+                                "width": 40
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string",
+                                "width": "auto"
+                            },
+                            "name": "MyColumn27",
+                            "designerId": "0f8cd97e-13a2-4647-b038-b6a929de0191",
+                            "cn": [
+                                {
+                                    "type": "Ext.grid.filters.filter.Number",
+                                    "reference": {
+                                        "name": "filter",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "name": "MyNumberFilter9",
+                                    "designerId": "5be91ddb-31a6-478a-aa62-b4ea7e747b27"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "align": "center",
+                        "text": "61-90"
+                    },
+                    "configAlternates": {
+                        "align": "string",
+                        "text": "string"
+                    },
+                    "name": "MyColumn36",
+                    "designerId": "aa140fa8-9940-4b41-b64f-508a4f0c6fed",
+                    "cn": [
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "GRP_4_AMT",
+                                "text": "Amount"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string"
+                            },
+                            "name": "MyColumn28",
+                            "designerId": "92622c38-596c-42be-830e-fe02af548940",
+                            "cn": [
+                                {
+                                    "type": "Ext.grid.filters.filter.Number",
+                                    "reference": {
+                                        "name": "filter",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "name": "MyNumberFilter10",
+                                    "designerId": "255a712f-16bd-4211-ae71-26649e950a3f"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "GRP_4_CNT",
+                                "text": "#",
+                                "width": 40
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string",
+                                "width": "auto"
+                            },
+                            "name": "MyColumn29",
+                            "designerId": "ef6b5330-fefa-425f-a0ec-4077fc8eacd1",
+                            "cn": [
+                                {
+                                    "type": "Ext.grid.filters.filter.Number",
+                                    "reference": {
+                                        "name": "filter",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "name": "MyNumberFilter11",
+                                    "designerId": "ae2b09c1-fa36-449d-a266-85a79c5391c1"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "align": "center",
+                        "text": "Over 90"
+                    },
+                    "configAlternates": {
+                        "align": "string",
+                        "text": "string"
+                    },
+                    "name": "MyColumn37",
+                    "designerId": "eeaf7771-dbeb-4345-85c4-21637cf004ae",
+                    "cn": [
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "GRP_5_AMT",
+                                "text": "Amount"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string"
+                            },
+                            "name": "MyColumn30",
+                            "designerId": "d235abd8-c8f9-4ccb-9bb7-0b2c60819848",
+                            "cn": [
+                                {
+                                    "type": "Ext.grid.filters.filter.Number",
+                                    "reference": {
+                                        "name": "filter",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "name": "MyNumberFilter12",
+                                    "designerId": "8dd24320-3987-49e8-903e-308153f82ac3"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "GRP_5_CNT",
+                                "text": "#",
+                                "width": 40
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string",
+                                "width": "auto"
+                            },
+                            "name": "MyColumn31",
+                            "designerId": "fff42acd-824b-4a14-abac-eec9981579ab",
+                            "cn": [
+                                {
+                                    "type": "Ext.grid.filters.filter.Number",
+                                    "reference": {
+                                        "name": "filter",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "name": "MyNumberFilter13",
+                                    "designerId": "31f17200-b222-4b1b-b660-75243e85ecdd"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.filters.Filters",
+                    "reference": {
+                        "name": "plugins",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "name": "MyGridFiltersPlugin",
+                    "designerId": "e44260e6-3b35-49dc-8c96-72884cfb093b"
+                }
+            ]
+        }
+    ]
+}

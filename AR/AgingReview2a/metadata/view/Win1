@@ -1,0 +1,294 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "closeAction": "hide",
+        "designer|userAlias": "win1",
+        "designer|userClassName": "Win1",
+        "height": 461,
+        "id": "win1",
+        "layout": "fit",
+        "title": "My Window",
+        "width": 431
+    },
+    "configAlternates": {
+        "closeAction": "string",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "layout": "string",
+        "title": "string",
+        "width": "auto",
+        "id": "string"
+    },
+    "name": "MyWindow",
+    "designerId": "de81e306-77a9-4a80-9d96-1ba056cc9e07",
+    "viewControllerInstanceId": "d1345813-807f-44b2-b31d-9903da74141f",
+    "viewModelInstanceId": "b7c6c93e-a54e-4001-8a42-235ad3a98b77",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyPadding": 10,
+                "defaultButton": "",
+                "id": "formProp",
+                "url": "/Gemini/AR/SetDefault.php?DB=GI"
+            },
+            "configAlternates": {
+                "bodyPadding": "auto",
+                "defaultButton": "string",
+                "id": "string",
+                "url": "string"
+            },
+            "name": "MyForm",
+            "designerId": "8e64767a-d7f4-4d06-95e1-8c001795d42f",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Hidden",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Label",
+                        "layout|anchor": "100%",
+                        "name": "USR"
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "id": "string",
+                        "layout|anchor": "string",
+                        "name": "string"
+                    },
+                    "name": "MyHiddenField",
+                    "designerId": "f495c106-3fc2-427b-934f-a15ea74fdc1e"
+                },
+                {
+                    "type": "Ext.form.field.Hidden",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Label",
+                        "layout|anchor": "100%",
+                        "name": "TAG"
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "id": "string",
+                        "layout|anchor": "string",
+                        "name": "string"
+                    },
+                    "name": "MyHiddenField1",
+                    "designerId": "23c6633c-129d-4192-a98d-fca4f90ed42b"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Description",
+                        "layout|anchor": "100%",
+                        "name": "TAGD"
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "id": "string",
+                        "layout|anchor": "string",
+                        "name": "string"
+                    },
+                    "name": "MyTextField",
+                    "designerId": "614758be-3850-4165-8313-8e12351dfb2c",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onTextfieldBlur",
+                                "implHandler": [
+                                    "console.log('Field Changed');"
+                                ],
+                                "name": "blur",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onTextfieldBlur",
+                            "designerId": "1a325699-2220-4d0d-bee6-0f6acbb84404"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.Hidden",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Label",
+                        "layout|anchor": "100%",
+                        "name": "TAGACTIVE"
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "id": "string",
+                        "layout|anchor": "string",
+                        "name": "string"
+                    },
+                    "name": "MyHiddenField2",
+                    "designerId": "dccb4283-ba43-4a5d-a125-9040484abd6f"
+                },
+                {
+                    "type": "Ext.form.field.Hidden",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Label",
+                        "layout|anchor": "100%",
+                        "name": "TAGTYPE"
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "id": "string",
+                        "layout|anchor": "string",
+                        "name": "string"
+                    },
+                    "name": "MyHiddenField3",
+                    "designerId": "8b2bfa9d-32da-4089-9675-91bea8c4c811"
+                },
+                {
+                    "type": "Ext.toolbar.Toolbar",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dock": "top"
+                    },
+                    "configAlternates": {
+                        "dock": "string"
+                    },
+                    "name": "MyToolbar1",
+                    "designerId": "30448161-c42d-4413-b44f-90b59b2a2c48",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "text": "MyButton"
+                            },
+                            "configAlternates": {
+                                "text": "string",
+                                "layout|flex": "number"
+                            },
+                            "name": "MyButton1",
+                            "designerId": "a627534a-2bdd-43ee-b275-ddc13ba3e709",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onButtonClick",
+                                        "implHandler": [
+                                            "form = Ext.getCmp('formProp').getForm();",
+                                            "form.submit();"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onButtonClick",
+                                    "designerId": "6d780f40-7787-4a75-b209-c2ff2b74619b"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.Checkbox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "boxLabel": "Box Label",
+                        "fieldLabel": "Label",
+                        "layout|anchor": "100%",
+                        "uncheckedValue": "N"
+                    },
+                    "configAlternates": {
+                        "boxLabel": "string",
+                        "fieldLabel": "string",
+                        "layout|anchor": "string",
+                        "uncheckedValue": "string"
+                    },
+                    "name": "MyCheckbox",
+                    "designerId": "7610cee0-dde7-4cbd-a08f-71c32274c509"
+                },
+                {
+                    "type": "Ext.form.field.Date",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Label",
+                        "layout|anchor": "100%",
+                        "submitFormat": "Y-m-d"
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "layout|anchor": "string",
+                        "submitFormat": "string"
+                    },
+                    "name": "MyDateField",
+                    "designerId": "7c5eacc2-015f-487e-a671-5ff4667346f9"
+                }
+            ]
+        }
+    ]
+}

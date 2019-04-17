@@ -1,0 +1,245 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "winExists",
+        "designer|userClassName": "WinExists",
+        "height": 738,
+        "id": "winExists",
+        "layout": "fit",
+        "title": "Processed Orders",
+        "width": 462
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "id": "string",
+        "layout": "string",
+        "title": "string",
+        "width": "auto"
+    },
+    "name": "MyWindow",
+    "designerId": "ec9e8335-c98e-4eae-9a0b-a2bbd28868d2",
+    "viewControllerInstanceId": "2e79026d-f3fe-49cf-bc80-94059518d36e",
+    "viewModelInstanceId": "fa7f199e-211f-4db8-93fb-907baf63e04a",
+    "cn": [
+        {
+            "type": "Ext.grid.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "store": [
+                    "storeReview"
+                ]
+            },
+            "configAlternates": {
+                "store": "binding"
+            },
+            "name": "MyGridPanel1",
+            "designerId": "69429962-384f-499c-90fd-b954d24c9a4d",
+            "cn": [
+                {
+                    "type": "Ext.view.Table",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyTable1",
+                    "designerId": "ebf63444-1ee0-4853-b219-ce0461e530ee"
+                },
+                {
+                    "type": "Ext.grid.column.Number",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "align": "end",
+                        "dataIndex": "ORDERNUM",
+                        "format": "00",
+                        "text": "Order"
+                    },
+                    "configAlternates": {
+                        "align": "string",
+                        "dataIndex": "datafield",
+                        "format": "string",
+                        "text": "string"
+                    },
+                    "name": "MyNumberColumn",
+                    "designerId": "9a6a56de-2378-4323-b423-206ee2845509",
+                    "cn": [
+                        {
+                            "type": "Ext.grid.filters.filter.Number",
+                            "reference": {
+                                "name": "filter",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "MyNumberFilter",
+                            "designerId": "6db9a157-be64-426d-8a51-aefa5593c6d4"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Number",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "align": "end",
+                        "dataIndex": "QTY",
+                        "format": "00",
+                        "text": "Quantity"
+                    },
+                    "configAlternates": {
+                        "align": "string",
+                        "dataIndex": "datafield",
+                        "format": "string",
+                        "text": "string"
+                    },
+                    "name": "MyNumberColumn4",
+                    "designerId": "76eb9e11-7801-48b2-b2d4-167f27b4b835"
+                },
+                {
+                    "type": "Ext.grid.column.Number",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "align": "end",
+                        "dataIndex": "SCANCNT",
+                        "format": "00",
+                        "text": "Scanned"
+                    },
+                    "configAlternates": {
+                        "align": "string",
+                        "dataIndex": "datafield",
+                        "format": "string",
+                        "text": "string"
+                    },
+                    "name": "MyNumberColumn5",
+                    "designerId": "f4f1859b-5d5f-4b69-87af-bcce6c1286e4"
+                },
+                {
+                    "type": "Ext.grid.column.Date",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "align": "end",
+                        "dataIndex": "LASTSCAN",
+                        "format": "m/j/Y",
+                        "text": "Last <br> Scanned"
+                    },
+                    "configAlternates": {
+                        "align": "string",
+                        "dataIndex": "datafield",
+                        "format": "string",
+                        "text": "string"
+                    },
+                    "name": "MyDateColumn",
+                    "designerId": "1d0847ff-232b-41fb-855a-c6d746b99581"
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onGridpanelRowDblClick",
+                        "implHandler": [
+                            "var ord = record.data.ORDERNUM;",
+                            "Ext.getCmp('ord').setValue(ord);",
+                            "",
+                            "Ext.Ajax.request({",
+                            "    url: '/Gemini/Buddy/getCust.php?DB=GI&ORD=' + ord  ,",
+                            "    method: 'GET',",
+                            "    async: false,",
+                            "    success: function(response, opts) {",
+                            "        //  console.log(response);",
+                            "        var obj = response.responseText;",
+                            "        // console.log(obj);",
+                            "        // Ext.getStore('MyJsonStore').load();",
+                            "        Ext.getCmp('pnlMain').setTitle('Buddy Check Components for ' + obj);",
+                            "",
+                            "        Ext.Ajax.request({",
+                            "            url: '/Gemini/Buddy/getCpy.php?DB=GI&ORD=' + ord  ,",
+                            "            method: 'GET',",
+                            "            async: false,",
+                            "            success: function(response, opts) {",
+                            "                //  console.log(response);",
+                            "                var obj = response.responseText;",
+                            "                console.log('copy count: ', obj);",
+                            "                Ext.getCmp('copy').setVisible(true);",
+                            "                Ext.getCmp('copy').setValue(obj);",
+                            "",
+                            "            },",
+                            "",
+                            "            failure: function(response, opts) {",
+                            "                console.log(response);",
+                            "                //  console.log('server-side failure with status code ' + response.status);",
+                            "            }",
+                            "        });",
+                            "",
+                            "",
+                            "    },",
+                            "",
+                            "    failure: function(response, opts) {",
+                            "        console.log(response);",
+                            "        //  console.log('server-side failure with status code ' + response.status);",
+                            "    }",
+                            "});",
+                            "",
+                            "Ext.getCmp('btnPrint').setVisible(true);",
+                            "Ext.getCmp('reset').setVisible(true);",
+                            "store = Ext.getStore('storeM');",
+                            "store.load({",
+                            "    params:{",
+                            "        ORD: ord",
+                            "    }",
+                            "});"
+                        ],
+                        "name": "rowdblclick",
+                        "scope": "me"
+                    },
+                    "configAlternates": {
+                        "fn": "string",
+                        "implHandler": "code",
+                        "name": "string",
+                        "scope": "string"
+                    },
+                    "name": "onGridpanelRowDblClick",
+                    "designerId": "6fe165e4-0116-4bcd-9f97-db22a5b7d613"
+                },
+                {
+                    "type": "Ext.grid.filters.Filters",
+                    "reference": {
+                        "name": "plugins",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "name": "MyGridFiltersPlugin",
+                    "designerId": "e9dbf1cd-439e-4dd6-9543-b9e237dfa0fb"
+                }
+            ]
+        }
+    ]
+}

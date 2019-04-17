@@ -1,0 +1,48 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "winbuild",
+        "designer|userClassName": "WinBuild",
+        "height": 73,
+        "id": "winbuild",
+        "layout": "fit",
+        "title": "Message",
+        "width": 302
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "id": "string",
+        "layout": "string",
+        "title": "string",
+        "width": "auto"
+    },
+    "name": "MyWindow",
+    "designerId": "6b7246b7-dee6-478b-84ff-c4e34c4f6d2a",
+    "viewControllerInstanceId": "5fc6aea2-fc83-40b7-ab1b-9102d9f8c12a",
+    "viewModelInstanceId": "f7899b45-d189-4f91-84b8-8e7a1ef26818",
+    "cn": [
+        {
+            "type": "Ext.form.field.Display",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "value": "Re-Building your Aging View "
+            },
+            "configAlternates": {
+                "value": "string"
+            },
+            "name": "MyDisplayField",
+            "designerId": "be34078b-a4fc-44e9-8261-c3b0e877b751"
+        }
+    ]
+}

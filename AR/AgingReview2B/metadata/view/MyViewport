@@ -1,0 +1,1934 @@
+{
+    "type": "Ext.container.Viewport",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|initialView": true,
+        "designer|userAlias": "myviewport",
+        "designer|userClassName": "MyViewport",
+        "height": 250,
+        "layout": "fit",
+        "width": 400
+    },
+    "configAlternates": {
+        "designer|initialView": "boolean",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "layout": "string",
+        "width": "auto"
+    },
+    "name": "MyViewport",
+    "designerId": "e5ab417d-5f1c-4c6b-859c-4f4746c4e4c4",
+    "viewControllerInstanceId": "d3508af8-bdc1-4dc4-9d1a-ee695bc8dd31",
+    "viewModelInstanceId": "71f450b4-a0d4-4cc0-9473-5bb6b09deb48",
+    "cn": [
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onViewportAfterLayout",
+                "implHandler": [
+                    "var params = Ext.urlDecode(location.search.substring(1));",
+                    "Ext.getCmp('gridb').setTitle('Customer Review for Region ' + params.RGN);",
+                    "",
+                    ""
+                ],
+                "name": "afterlayout",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onViewportAfterLayout",
+            "designerId": "c9cd75ca-129b-49e5-aafb-a433c0b9482b"
+        },
+        {
+            "type": "Ext.grid.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "columnLines": true,
+                "id": "gridb",
+                "stateId": "gridb",
+                "stateful": true,
+                "store": [
+                    "storeRgn"
+                ],
+                "title": "My Grid Panel"
+            },
+            "configAlternates": {
+                "store": "binding",
+                "id": "string",
+                "stateId": "string",
+                "stateful": "boolean",
+                "title": "string",
+                "columnLines": "boolean"
+            },
+            "name": "MyGridPanel",
+            "designerId": "02ef4de5-2a31-45b6-85b8-d6c0f26bc587",
+            "cn": [
+                {
+                    "type": "Ext.view.Table",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "loadingText": "Retreiving aging data for slected region",
+                        "stateId": "gridb_table",
+                        "stateful": true
+                    },
+                    "configAlternates": {
+                        "stateId": "string",
+                        "stateful": "boolean",
+                        "loadingText": "string"
+                    },
+                    "name": "MyTable",
+                    "designerId": "bc0b6df4-2b37-47f5-af88-4bf7098fd8c9",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "record",
+                                    "rowIndex",
+                                    "rowParams",
+                                    "store"
+                                ],
+                                "fn": "getRowClass",
+                                "implHandler": [
+                                    "console.log(record.data.GRP_5_AMT);",
+                                    "if (record.data.IVPRI == 1){",
+                                    "    return 'p1-row';",
+                                    "}",
+                                    "if (record.data.IVPRI == 2){",
+                                    "    return 'p2-row';",
+                                    "}",
+                                    "if (record.data.IVPRI == 3){",
+                                    "    return 'p3-row';",
+                                    "}",
+                                    "if (record.data.IVPRI == 4){",
+                                    "    return 'p4-row';",
+                                    "}",
+                                    "if (record.data.IVPRI == 5){",
+                                    "    return 'child-row';",
+                                    "}",
+                                    "if (record.data.GRP_5 == 5){",
+                                    "    return 'child-row';",
+                                    "}",
+                                    "if (record.data.IVPRI == 99 && record.data.GRP_5_AMT >0){",
+                                    "    return 'adult-row';",
+                                    "}"
+                                ]
+                            },
+                            "configAlternates": {
+                                "designer|params": "typedarray",
+                                "fn": "string",
+                                "implHandler": "code"
+                            },
+                            "name": "getRowClass",
+                            "designerId": "f5533347-8deb-449c-abe5-017fe3c4ad17"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Number",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "align": "center",
+                        "dataIndex": "IVPRI",
+                        "format": "00",
+                        "stateId": "b1",
+                        "stateful": true,
+                        "text": "AR<br>Pri",
+                        "width": 42
+                    },
+                    "configAlternates": {
+                        "align": "string",
+                        "dataIndex": "datafield",
+                        "format": "string",
+                        "stateId": "string",
+                        "stateful": "boolean",
+                        "text": "string",
+                        "width": "auto"
+                    },
+                    "name": "MyNumberColumn17",
+                    "designerId": "cea9a3a9-fecb-4dee-ae47-f3a66836acc3",
+                    "cn": [
+                        {
+                            "type": "Ext.grid.filters.filter.List",
+                            "reference": {
+                                "name": "filter",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "MyListFilter",
+                            "designerId": "6f490fc0-81e7-48e5-923a-62eb9a6f0e94"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Number",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "align": "end",
+                        "dataIndex": "IVBLTO",
+                        "format": "00",
+                        "stateId": "b2",
+                        "stateful": true,
+                        "text": "Customer"
+                    },
+                    "configAlternates": {
+                        "align": "string",
+                        "dataIndex": "datafield",
+                        "format": "string",
+                        "stateId": "string",
+                        "stateful": "boolean",
+                        "text": "string"
+                    },
+                    "name": "MyNumberColumn",
+                    "designerId": "3db8f0f5-4d38-4a40-926d-2404d7eb8b6d",
+                    "cn": [
+                        {
+                            "type": "Ext.grid.filters.filter.Number",
+                            "reference": {
+                                "name": "filter",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "MyNumberFilter",
+                            "designerId": "9fb2792c-5d39-48ef-a8c2-1bc06e33266b"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "CMCNA1",
+                        "stateId": "b3",
+                        "stateful": true,
+                        "text": "Name",
+                        "width": 165
+                    },
+                    "configAlternates": {
+                        "dataIndex": "datafield",
+                        "stateId": "string",
+                        "stateful": "boolean",
+                        "text": "string",
+                        "width": "auto"
+                    },
+                    "name": "MyColumn1",
+                    "designerId": "9568cc22-3480-434e-b877-616da6cbb5e5",
+                    "cn": [
+                        {
+                            "type": "Ext.grid.filters.filter.String",
+                            "reference": {
+                                "name": "filter",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "MyStringFilter",
+                            "designerId": "844af769-8653-489e-9bc4-d0c718fb18e6"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Number",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "align": "center",
+                        "dataIndex": "CTOT",
+                        "stateId": "b4",
+                        "stateful": true,
+                        "summaryType": "sum",
+                        "text": "Total Due",
+                        "width": 67
+                    },
+                    "configAlternates": {
+                        "align": "string",
+                        "dataIndex": "datafield",
+                        "format": "string",
+                        "stateId": "string",
+                        "stateful": "boolean",
+                        "text": "string",
+                        "width": "auto",
+                        "summaryType": "string"
+                    },
+                    "name": "MyNumberColumn16",
+                    "designerId": "52041d0d-4a67-4c73-aadf-97a293abb67d",
+                    "cn": [
+                        {
+                            "type": "Ext.grid.filters.filter.Number",
+                            "reference": {
+                                "name": "filter",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "MyNumberFilter15",
+                            "designerId": "15b29283-491a-481d-bb90-4eecbb06fb6f"
+                        },
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "val",
+                                    "params",
+                                    "data",
+                                    "metaData"
+                                ],
+                                "fn": "summaryRenderer",
+                                "implHandler": [
+                                    "value = Ext.util.Format.number(val, '0,000.00');",
+                                    "return value;"
+                                ]
+                            },
+                            "configAlternates": {
+                                "designer|params": "typedarray",
+                                "fn": "string",
+                                "implHandler": "code"
+                            },
+                            "name": "summaryRenderer",
+                            "designerId": "44661d02-4903-4312-99ff-8fa361ea06b3"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "stateId": "b5",
+                        "stateful": true,
+                        "text": "Credits"
+                    },
+                    "configAlternates": {
+                        "stateId": "string",
+                        "stateful": "boolean",
+                        "text": "string"
+                    },
+                    "name": "MyColumn",
+                    "designerId": "bbd39d10-76b5-4d48-a4e7-29617784654c",
+                    "cn": [
+                        {
+                            "type": "Ext.grid.column.Number",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "align": "end",
+                                "dataIndex": "GRP_CR_AMT",
+                                "stateId": "b6",
+                                "stateful": true,
+                                "summaryType": "sum",
+                                "text": "Amount"
+                            },
+                            "configAlternates": {
+                                "align": "string",
+                                "dataIndex": "datafield",
+                                "stateId": "string",
+                                "stateful": "boolean",
+                                "text": "string",
+                                "summaryType": "string"
+                            },
+                            "name": "MyNumberColumn2",
+                            "designerId": "00015085-f06f-45db-95d6-7c334e835b77",
+                            "cn": [
+                                {
+                                    "type": "Ext.grid.filters.filter.Number",
+                                    "reference": {
+                                        "name": "filter",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "name": "MyNumberFilter1",
+                                    "designerId": "be06cec0-29cc-4ccb-ab1c-51ab8b27a747"
+                                },
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "val",
+                                            "params",
+                                            "data",
+                                            "metaData"
+                                        ],
+                                        "fn": "summaryRenderer",
+                                        "implHandler": [
+                                            "value = Ext.util.Format.number(val, '0,000.00');",
+                                            "return value;"
+                                        ]
+                                    },
+                                    "configAlternates": {
+                                        "designer|params": "typedarray",
+                                        "fn": "string",
+                                        "implHandler": "code"
+                                    },
+                                    "name": "summaryRenderer",
+                                    "designerId": "68854072-1290-4644-89b7-f4a16e2c9b1b"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Number",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "align": "end",
+                                "dataIndex": "GRP_CR_CNT",
+                                "format": "00",
+                                "stateId": "b7",
+                                "stateful": true,
+                                "summaryType": "sum",
+                                "text": "#",
+                                "width": 50
+                            },
+                            "configAlternates": {
+                                "align": "string",
+                                "dataIndex": "datafield",
+                                "format": "string",
+                                "stateId": "string",
+                                "stateful": "boolean",
+                                "text": "string",
+                                "width": "auto",
+                                "summaryType": "string"
+                            },
+                            "name": "MyNumberColumn3",
+                            "designerId": "28f02590-f523-4b26-ace1-dd6975605ed5",
+                            "cn": [
+                                {
+                                    "type": "Ext.grid.filters.filter.Number",
+                                    "reference": {
+                                        "name": "filter",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "name": "MyNumberFilter2",
+                                    "designerId": "f1313d4f-a489-4ae0-be40-3dedbb6d1bcc"
+                                },
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "val",
+                                            "params",
+                                            "data",
+                                            "metaData"
+                                        ],
+                                        "fn": "summaryRenderer",
+                                        "implHandler": [
+                                            "value = Ext.util.Format.number(val, '0,000');",
+                                            "return value;"
+                                        ]
+                                    },
+                                    "configAlternates": {
+                                        "designer|params": "typedarray",
+                                        "fn": "string",
+                                        "implHandler": "code"
+                                    },
+                                    "name": "summaryRenderer",
+                                    "designerId": "3fa14d8c-f6f5-4250-b01b-7f5222f28edf"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "stateId": "b8",
+                        "stateful": true,
+                        "text": "Current"
+                    },
+                    "configAlternates": {
+                        "stateId": "string",
+                        "stateful": "boolean",
+                        "text": "string"
+                    },
+                    "name": "MyColumn2",
+                    "designerId": "a208a37e-646c-4872-84d2-74d752bcca4f",
+                    "cn": [
+                        {
+                            "type": "Ext.grid.column.Number",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "align": "end",
+                                "dataIndex": "GRP_0_AMT",
+                                "stateId": "b9",
+                                "stateful": true,
+                                "summaryType": "sum",
+                                "text": "Amount"
+                            },
+                            "configAlternates": {
+                                "align": "string",
+                                "dataIndex": "datafield",
+                                "text": "string",
+                                "stateId": "string",
+                                "stateful": "boolean",
+                                "summaryType": "string"
+                            },
+                            "name": "MyNumberColumn4",
+                            "designerId": "14190e82-cab1-4797-af18-1b2ac3fe2d7f",
+                            "cn": [
+                                {
+                                    "type": "Ext.grid.filters.filter.Number",
+                                    "reference": {
+                                        "name": "filter",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "name": "MyNumberFilter3",
+                                    "designerId": "039174f4-b822-4632-8d78-a4665dbb890d"
+                                },
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "val",
+                                            "params",
+                                            "data",
+                                            "metaData"
+                                        ],
+                                        "fn": "summaryRenderer",
+                                        "implHandler": [
+                                            "value = Ext.util.Format.number(val, '0,000.00');",
+                                            "return value;"
+                                        ]
+                                    },
+                                    "configAlternates": {
+                                        "designer|params": "typedarray",
+                                        "fn": "string",
+                                        "implHandler": "code"
+                                    },
+                                    "name": "summaryRenderer",
+                                    "designerId": "101b6ab1-c2fe-4238-b4d8-6eb99a762edc"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Number",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "align": "end",
+                                "dataIndex": "GRP_0_CNT",
+                                "format": "00",
+                                "stateId": "b10",
+                                "stateful": true,
+                                "summaryType": "sum",
+                                "text": "#",
+                                "width": 50
+                            },
+                            "configAlternates": {
+                                "align": "string",
+                                "dataIndex": "datafield",
+                                "format": "string",
+                                "text": "string",
+                                "width": "auto",
+                                "stateId": "string",
+                                "stateful": "boolean",
+                                "summaryType": "string"
+                            },
+                            "name": "MyNumberColumn5",
+                            "designerId": "16e27952-8960-4793-9f51-956629b4b530",
+                            "cn": [
+                                {
+                                    "type": "Ext.grid.filters.filter.Number",
+                                    "reference": {
+                                        "name": "filter",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "name": "MyNumberFilter4",
+                                    "designerId": "8fc93f18-feea-4332-aaf0-a014f772db01"
+                                },
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "val",
+                                            "params",
+                                            "data",
+                                            "metaData"
+                                        ],
+                                        "fn": "summaryRenderer",
+                                        "implHandler": [
+                                            "value = Ext.util.Format.number(val, '0,000');",
+                                            "return value;"
+                                        ]
+                                    },
+                                    "configAlternates": {
+                                        "designer|params": "typedarray",
+                                        "fn": "string",
+                                        "implHandler": "code"
+                                    },
+                                    "name": "summaryRenderer",
+                                    "designerId": "991e519f-626c-4685-9217-8a8ce2535e1e"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "stateId": "b11",
+                        "stateful": true,
+                        "text": "1-15"
+                    },
+                    "configAlternates": {
+                        "stateId": "string",
+                        "stateful": "boolean",
+                        "text": "string"
+                    },
+                    "name": "MyColumn3",
+                    "designerId": "28d8186b-c59f-4cdb-a4a1-8b09dd98a1c8",
+                    "cn": [
+                        {
+                            "type": "Ext.grid.column.Number",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "align": "end",
+                                "dataIndex": "GRP_1_AMT",
+                                "stateId": "b12",
+                                "stateful": true,
+                                "summaryType": "sum",
+                                "text": "Amount"
+                            },
+                            "configAlternates": {
+                                "align": "string",
+                                "dataIndex": "datafield",
+                                "stateId": "string",
+                                "stateful": "boolean",
+                                "text": "string",
+                                "summaryType": "string"
+                            },
+                            "name": "MyNumberColumn6",
+                            "designerId": "282fb348-690b-4f19-9fbe-0323c3697bdc",
+                            "cn": [
+                                {
+                                    "type": "Ext.grid.filters.filter.Number",
+                                    "reference": {
+                                        "name": "filter",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "name": "MyNumberFilter5",
+                                    "designerId": "4e484c53-aec6-4661-a7df-fa020d1bab39"
+                                },
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "val",
+                                            "params",
+                                            "data",
+                                            "metaData"
+                                        ],
+                                        "fn": "summaryRenderer",
+                                        "implHandler": [
+                                            "value = Ext.util.Format.number(val, '0,000.00');",
+                                            "return value;"
+                                        ]
+                                    },
+                                    "configAlternates": {
+                                        "designer|params": "typedarray",
+                                        "fn": "string",
+                                        "implHandler": "code"
+                                    },
+                                    "name": "summaryRenderer",
+                                    "designerId": "7482fd1e-ea96-4775-be5e-421f9089aec5"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Number",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "align": "end",
+                                "dataIndex": "GRP_1_CNT",
+                                "format": "00",
+                                "stateId": "b13",
+                                "stateful": true,
+                                "summaryType": "sum",
+                                "text": "#",
+                                "width": 50
+                            },
+                            "configAlternates": {
+                                "align": "string",
+                                "dataIndex": "datafield",
+                                "format": "string",
+                                "stateId": "string",
+                                "stateful": "boolean",
+                                "text": "string",
+                                "width": "auto",
+                                "summaryType": "string"
+                            },
+                            "name": "MyNumberColumn7",
+                            "designerId": "3decf080-85e5-4066-af66-e4fee159c37a",
+                            "cn": [
+                                {
+                                    "type": "Ext.grid.filters.filter.Number",
+                                    "reference": {
+                                        "name": "filter",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "name": "MyNumberFilter6",
+                                    "designerId": "1133e08c-5c65-40cb-b23f-46c53dec7b5c"
+                                },
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "val",
+                                            "params",
+                                            "data",
+                                            "metaData"
+                                        ],
+                                        "fn": "summaryRenderer",
+                                        "implHandler": [
+                                            "value = Ext.util.Format.number(val, '0,000');",
+                                            "return value;"
+                                        ]
+                                    },
+                                    "configAlternates": {
+                                        "designer|params": "typedarray",
+                                        "fn": "string",
+                                        "implHandler": "code"
+                                    },
+                                    "name": "summaryRenderer",
+                                    "designerId": "c61db3ff-68c7-4ad1-91c8-b8b78afae7ab"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "stateId": "b14",
+                        "stateful": true,
+                        "text": "16-30"
+                    },
+                    "configAlternates": {
+                        "stateId": "string",
+                        "stateful": "boolean",
+                        "text": "string"
+                    },
+                    "name": "MyColumn4",
+                    "designerId": "0de7c5f3-4dac-436a-8df0-8c88abebe35b",
+                    "cn": [
+                        {
+                            "type": "Ext.grid.column.Number",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "align": "end",
+                                "dataIndex": "GRP_2_AMT",
+                                "stateId": "b15",
+                                "stateful": true,
+                                "summaryType": "sum",
+                                "text": "Amount"
+                            },
+                            "configAlternates": {
+                                "align": "string",
+                                "dataIndex": "datafield",
+                                "stateId": "string",
+                                "stateful": "boolean",
+                                "text": "string",
+                                "summaryType": "string"
+                            },
+                            "name": "MyNumberColumn8",
+                            "designerId": "85e38c85-3f5f-4757-ae95-1f822918ce7a",
+                            "cn": [
+                                {
+                                    "type": "Ext.grid.filters.filter.Number",
+                                    "reference": {
+                                        "name": "filter",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "name": "MyNumberFilter7",
+                                    "designerId": "87dc335c-ef19-48d5-9f9a-ba00cda42bb1"
+                                },
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "val",
+                                            "params",
+                                            "data",
+                                            "metaData"
+                                        ],
+                                        "fn": "summaryRenderer",
+                                        "implHandler": [
+                                            "value = Ext.util.Format.number(val, '0,000.00');",
+                                            "return value;"
+                                        ]
+                                    },
+                                    "configAlternates": {
+                                        "designer|params": "typedarray",
+                                        "fn": "string",
+                                        "implHandler": "code"
+                                    },
+                                    "name": "summaryRenderer",
+                                    "designerId": "75a46db3-ec94-457d-8310-02feb5df6d52"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Number",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "align": "end",
+                                "dataIndex": "GRP_2_CNT",
+                                "format": "00",
+                                "stateId": "b16",
+                                "stateful": true,
+                                "summaryType": "sum",
+                                "text": "#",
+                                "width": 50
+                            },
+                            "configAlternates": {
+                                "align": "string",
+                                "dataIndex": "datafield",
+                                "format": "string",
+                                "stateId": "string",
+                                "stateful": "boolean",
+                                "text": "string",
+                                "width": "auto",
+                                "summaryType": "string"
+                            },
+                            "name": "MyNumberColumn9",
+                            "designerId": "5f7c4a84-d7ff-49ef-8ac5-b2a20eae5b08",
+                            "cn": [
+                                {
+                                    "type": "Ext.grid.filters.filter.Number",
+                                    "reference": {
+                                        "name": "filter",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "name": "MyNumberFilter8",
+                                    "designerId": "88a6d864-ae48-4fdd-832d-4a0b6757f552"
+                                },
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "val",
+                                            "params",
+                                            "data",
+                                            "metaData"
+                                        ],
+                                        "fn": "summaryRenderer",
+                                        "implHandler": [
+                                            "value = Ext.util.Format.number(val, '0,000');",
+                                            "return value;"
+                                        ]
+                                    },
+                                    "configAlternates": {
+                                        "designer|params": "typedarray",
+                                        "fn": "string",
+                                        "implHandler": "code"
+                                    },
+                                    "name": "summaryRenderer",
+                                    "designerId": "21670155-bf70-4cc7-a41c-87738df786cd"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "stateId": "b17",
+                        "stateful": true,
+                        "text": "31-60"
+                    },
+                    "configAlternates": {
+                        "stateId": "string",
+                        "stateful": "boolean",
+                        "text": "string"
+                    },
+                    "name": "MyColumn5",
+                    "designerId": "a11d337e-7bb9-4be4-9a50-ee7c52ceffed",
+                    "cn": [
+                        {
+                            "type": "Ext.grid.column.Number",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "align": "end",
+                                "dataIndex": "GRP_3_AMT",
+                                "stateId": "b18",
+                                "stateful": true,
+                                "summaryType": "sum",
+                                "text": "Amount"
+                            },
+                            "configAlternates": {
+                                "align": "string",
+                                "dataIndex": "datafield",
+                                "stateId": "string",
+                                "stateful": "boolean",
+                                "text": "string",
+                                "summaryType": "string"
+                            },
+                            "name": "MyNumberColumn10",
+                            "designerId": "04b30943-7e55-43c0-b241-b8beda30d1ff",
+                            "cn": [
+                                {
+                                    "type": "Ext.grid.filters.filter.Number",
+                                    "reference": {
+                                        "name": "filter",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "name": "MyNumberFilter9",
+                                    "designerId": "bcfb5c5b-97e2-421d-99e8-b8e9aaf01d6e"
+                                },
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "val",
+                                            "params",
+                                            "data",
+                                            "metaData"
+                                        ],
+                                        "fn": "summaryRenderer",
+                                        "implHandler": [
+                                            "value = Ext.util.Format.number(val, '0,000.00');",
+                                            "return value;"
+                                        ]
+                                    },
+                                    "configAlternates": {
+                                        "designer|params": "typedarray",
+                                        "fn": "string",
+                                        "implHandler": "code"
+                                    },
+                                    "name": "summaryRenderer",
+                                    "designerId": "0fed18e1-3eac-4803-83c9-ba7f28ac0c99"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Number",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "align": "end",
+                                "dataIndex": "GRP_3_CNT",
+                                "format": "00",
+                                "stateId": "b19",
+                                "stateful": true,
+                                "summaryType": "sum",
+                                "text": "#",
+                                "width": 50
+                            },
+                            "configAlternates": {
+                                "align": "string",
+                                "dataIndex": "datafield",
+                                "format": "string",
+                                "stateId": "string",
+                                "stateful": "boolean",
+                                "text": "string",
+                                "width": "auto",
+                                "summaryType": "string"
+                            },
+                            "name": "MyNumberColumn11",
+                            "designerId": "6f6a3f76-c22b-415b-b8c5-15f93ebb8b41",
+                            "cn": [
+                                {
+                                    "type": "Ext.grid.filters.filter.Number",
+                                    "reference": {
+                                        "name": "filter",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "name": "MyNumberFilter10",
+                                    "designerId": "ff0bcaf0-a73d-43e0-a745-10d4bb4b38fc"
+                                },
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "val",
+                                            "params",
+                                            "data",
+                                            "metaData"
+                                        ],
+                                        "fn": "summaryRenderer",
+                                        "implHandler": [
+                                            "value = Ext.util.Format.number(val, '0,000');",
+                                            "return value;"
+                                        ]
+                                    },
+                                    "configAlternates": {
+                                        "designer|params": "typedarray",
+                                        "fn": "string",
+                                        "implHandler": "code"
+                                    },
+                                    "name": "summaryRenderer",
+                                    "designerId": "9894d037-63e7-4f67-a79f-e103baa13cb0"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "stateId": "b20",
+                        "stateful": true,
+                        "text": "61-90"
+                    },
+                    "configAlternates": {
+                        "stateId": "string",
+                        "stateful": "boolean",
+                        "text": "string"
+                    },
+                    "name": "MyColumn6",
+                    "designerId": "c3a5c974-e843-4c14-806a-01f01bf58671",
+                    "cn": [
+                        {
+                            "type": "Ext.grid.column.Number",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "align": "end",
+                                "dataIndex": "GRP_4_AMT",
+                                "stateId": "b21",
+                                "stateful": true,
+                                "summaryType": "sum",
+                                "text": "Amount"
+                            },
+                            "configAlternates": {
+                                "align": "string",
+                                "dataIndex": "datafield",
+                                "stateId": "string",
+                                "stateful": "boolean",
+                                "text": "string",
+                                "summaryType": "string"
+                            },
+                            "name": "MyNumberColumn12",
+                            "designerId": "eb5de47a-e024-4fb4-8346-c2c4e4f1ad04",
+                            "cn": [
+                                {
+                                    "type": "Ext.grid.filters.filter.Number",
+                                    "reference": {
+                                        "name": "filter",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "name": "MyNumberFilter11",
+                                    "designerId": "16e05068-992a-4a52-9599-646976d25894"
+                                },
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "val",
+                                            "params",
+                                            "data",
+                                            "metaData"
+                                        ],
+                                        "fn": "summaryRenderer",
+                                        "implHandler": [
+                                            "value = Ext.util.Format.number(val, '0,000.00');",
+                                            "return value;"
+                                        ]
+                                    },
+                                    "configAlternates": {
+                                        "designer|params": "typedarray",
+                                        "fn": "string",
+                                        "implHandler": "code"
+                                    },
+                                    "name": "summaryRenderer",
+                                    "designerId": "267771b1-3f43-4243-8439-4faadd3edab5"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Number",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "align": "end",
+                                "dataIndex": "GRP_4_CNT",
+                                "format": "00",
+                                "stateId": "b22",
+                                "stateful": true,
+                                "summaryType": "sum",
+                                "text": "#",
+                                "width": 50
+                            },
+                            "configAlternates": {
+                                "align": "string",
+                                "dataIndex": "datafield",
+                                "format": "string",
+                                "stateId": "string",
+                                "stateful": "boolean",
+                                "text": "string",
+                                "width": "auto",
+                                "summaryType": "string"
+                            },
+                            "name": "MyNumberColumn13",
+                            "designerId": "c1d7e4a8-bddb-41fe-932c-b4cb819eef23",
+                            "cn": [
+                                {
+                                    "type": "Ext.grid.filters.filter.Number",
+                                    "reference": {
+                                        "name": "filter",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "name": "MyNumberFilter12",
+                                    "designerId": "10e8abcb-d9eb-4cd8-9444-4e61da0466a2"
+                                },
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "val",
+                                            "params",
+                                            "data",
+                                            "metaData"
+                                        ],
+                                        "fn": "summaryRenderer",
+                                        "implHandler": [
+                                            "value = Ext.util.Format.number(val, '0,000');",
+                                            "return value;"
+                                        ]
+                                    },
+                                    "configAlternates": {
+                                        "designer|params": "typedarray",
+                                        "fn": "string",
+                                        "implHandler": "code"
+                                    },
+                                    "name": "summaryRenderer",
+                                    "designerId": "0065c7bb-8cfd-44ac-8d56-3cd4d4522aa3"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "stateId": "bc7",
+                        "stateful": true,
+                        "text": "Over 90"
+                    },
+                    "configAlternates": {
+                        "stateId": "string",
+                        "stateful": "boolean",
+                        "text": "string"
+                    },
+                    "name": "MyColumn7",
+                    "designerId": "03a44717-daba-4914-9abb-c5dc19c36e1e",
+                    "cn": [
+                        {
+                            "type": "Ext.grid.column.Number",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "align": "end",
+                                "dataIndex": "GRP_5_AMT",
+                                "stateId": "b24",
+                                "stateful": true,
+                                "summaryType": "sum",
+                                "text": "Amount"
+                            },
+                            "configAlternates": {
+                                "align": "string",
+                                "dataIndex": "datafield",
+                                "stateId": "string",
+                                "stateful": "boolean",
+                                "text": "string",
+                                "summaryType": "string"
+                            },
+                            "name": "MyNumberColumn14",
+                            "designerId": "b012b069-af92-46a1-a731-4b2b1388853c",
+                            "cn": [
+                                {
+                                    "type": "Ext.grid.filters.filter.Number",
+                                    "reference": {
+                                        "name": "filter",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "name": "MyNumberFilter13",
+                                    "designerId": "b43102b1-0f22-4fb8-98ca-2e1120c4e654"
+                                },
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "val",
+                                            "params",
+                                            "data",
+                                            "metaData"
+                                        ],
+                                        "fn": "summaryRenderer",
+                                        "implHandler": [
+                                            "value = Ext.util.Format.number(val, '0,000.00');",
+                                            "return value;"
+                                        ]
+                                    },
+                                    "configAlternates": {
+                                        "designer|params": "typedarray",
+                                        "fn": "string",
+                                        "implHandler": "code"
+                                    },
+                                    "name": "summaryRenderer",
+                                    "designerId": "7ff15e8b-4a93-4682-994c-a2acce9773f9"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Number",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "align": "end",
+                                "dataIndex": "GRP_5_CNT",
+                                "format": "00",
+                                "stateId": "b25",
+                                "stateful": true,
+                                "summaryType": "sum",
+                                "text": "#",
+                                "width": 50
+                            },
+                            "configAlternates": {
+                                "align": "string",
+                                "dataIndex": "datafield",
+                                "format": "string",
+                                "stateId": "string",
+                                "stateful": "boolean",
+                                "text": "string",
+                                "width": "auto",
+                                "summaryType": "string"
+                            },
+                            "name": "MyNumberColumn15",
+                            "designerId": "07830941-56c7-49f7-9021-68b0f26a10bc",
+                            "cn": [
+                                {
+                                    "type": "Ext.grid.filters.filter.Number",
+                                    "reference": {
+                                        "name": "filter",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "name": "MyNumberFilter14",
+                                    "designerId": "19f083ba-5e6f-463f-864e-df0f63f7c9e7"
+                                },
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "val",
+                                            "params",
+                                            "data",
+                                            "metaData"
+                                        ],
+                                        "fn": "summaryRenderer",
+                                        "implHandler": [
+                                            "value = Ext.util.Format.number(val, '0,000');",
+                                            "return value;"
+                                        ]
+                                    },
+                                    "configAlternates": {
+                                        "designer|params": "typedarray",
+                                        "fn": "string",
+                                        "implHandler": "code"
+                                    },
+                                    "name": "summaryRenderer",
+                                    "designerId": "96865dc0-2d92-45f6-a006-90a26a1cab6b"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.filters.Filters",
+                    "reference": {
+                        "name": "plugins",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "stateId": "b26"
+                    },
+                    "configAlternates": {
+                        "stateEvents": "array",
+                        "stateId": "string"
+                    },
+                    "name": "MyGridFiltersPlugin",
+                    "designerId": "412d405b-e215-48cb-9a9d-a7e3caa48f22"
+                },
+                {
+                    "type": "Ext.toolbar.Toolbar",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dock": "top"
+                    },
+                    "configAlternates": {
+                        "dock": "string"
+                    },
+                    "name": "MyToolbar",
+                    "designerId": "5238de33-cd4f-40ab-ba96-13a16a25ec9f",
+                    "cn": [
+                        {
+                            "type": "Ext.form.Label",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "id": "pri1c",
+                                "layout|flex": null,
+                                "padding": "5,0,0,0",
+                                "style": "background-color: #fed0a3 !important; ",
+                                "text": "Priority 1 (Invoices > 45 days w/ Must Ship Date)"
+                            },
+                            "configAlternates": {
+                                "id": "string",
+                                "layout|flex": "number",
+                                "text": "string",
+                                "padding": "auto",
+                                "style": "string"
+                            },
+                            "name": "MyLabel",
+                            "designerId": "d993ad3d-380d-4214-8afe-de64967edaee"
+                        },
+                        {
+                            "type": "Ext.form.Label",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "id": "pri2c",
+                                "layout|flex": null,
+                                "padding": "5,0,0,0",
+                                "style": " background-color: #fee2a3 !important; ",
+                                "text": "Priority 2 (Invoices > 45 days with a Credit Flag)"
+                            },
+                            "configAlternates": {
+                                "id": "string",
+                                "layout|flex": "number",
+                                "text": "string",
+                                "padding": "auto",
+                                "style": "string"
+                            },
+                            "name": "MyLabel1",
+                            "designerId": "c704b419-66a9-4cb5-bad8-453fc4756608"
+                        },
+                        {
+                            "type": "Ext.form.Label",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "id": "pri3c",
+                                "layout|flex": null,
+                                "padding": "5,0,0,0",
+                                "style": "background-color: #919fd3 !important; color: Black;",
+                                "text": "Priority 3 (Invoices > 90 days with open events) "
+                            },
+                            "configAlternates": {
+                                "id": "string",
+                                "layout|flex": "number",
+                                "text": "string",
+                                "padding": "auto",
+                                "style": "string"
+                            },
+                            "name": "MyLabel2",
+                            "designerId": "a975a467-fa79-4b70-992b-0e6bd5887f62"
+                        },
+                        {
+                            "type": "Ext.form.Label",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "id": "pri4c",
+                                "layout|flex": null,
+                                "padding": "5,0,0,0",
+                                "style": " background-color: #85ebcd !important; color:Black;",
+                                "text": "Priority 4 (Invoice date > 90 days without events)"
+                            },
+                            "configAlternates": {
+                                "id": "string",
+                                "layout|flex": "number",
+                                "text": "string",
+                                "padding": "auto",
+                                "style": "string"
+                            },
+                            "name": "MyLabel3",
+                            "designerId": "dca61c58-6d6a-4203-ba73-c778c5b34dc2"
+                        },
+                        {
+                            "type": "Ext.form.Label",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "id": "pri5c",
+                                "layout|flex": null,
+                                "padding": "5,0,0,0",
+                                "style": "background-color:  #ffe2e2 !important; color:black; !important; ",
+                                "text": "Priority 5 (Zero Due, Negative Posted)"
+                            },
+                            "configAlternates": {
+                                "id": "string",
+                                "layout|flex": "number",
+                                "text": "string",
+                                "padding": "auto",
+                                "style": "string"
+                            },
+                            "name": "MyLabel4",
+                            "designerId": "885707d7-495c-4b57-aa60-21e2faf41754"
+                        }
+                    ]
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onGridbCellDblClick",
+                        "implHandler": [
+                            "",
+                            "",
+                            "var col =tableview.eventPosition.column.dataIndex;",
+                            "var cust = record.data.IVBLTO;",
+                            "var custname = record.data.CMCNA1;",
+                            "console.log(tableview.eventPosition.column);",
+                            "var age_grp ='ALL';",
+                            "col2 = col.substr(4,1);",
+                            "grp = col.substr(0,3);",
+                            "if (grp  == 'GRP'){",
+                            "",
+                            "    if (col2 !== 'C'){",
+                            "        age_grp = col2;",
+                            "    } else {",
+                            "        age_grp = 'CR';",
+                            "    }",
+                            "}",
+                            "",
+                            "console.log(col, age_grp,col2, cust);",
+                            "",
+                            "url = '/Gemini/AR/AgingReview2C/index.html?DB=GI&CUST=' + cust + '&GRP=' + age_grp + '&NAME=' + custname;",
+                            "window.open(url, cust, \"toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=1600,height=500\");"
+                        ],
+                        "name": "celldblclick",
+                        "scope": "me"
+                    },
+                    "configAlternates": {
+                        "fn": "string",
+                        "implHandler": "code",
+                        "name": "string",
+                        "scope": "string"
+                    },
+                    "name": "onGridbCellDblClick",
+                    "designerId": "6ca09a2e-aff0-475d-9b6d-b899a051696d"
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onGridbStateSave",
+                        "implHandler": [
+                            "console.log('Grid State Save: ', stateful, state);",
+                            ""
+                        ],
+                        "name": "statesave",
+                        "scope": "me"
+                    },
+                    "configAlternates": {
+                        "fn": "string",
+                        "implHandler": "code",
+                        "name": "string",
+                        "scope": "string"
+                    },
+                    "name": "onGridbStateSave",
+                    "designerId": "e6cbd191-4a27-403d-8630-d52891c6f347"
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onGridbStateRestore",
+                        "implHandler": [
+                            "console.log('Grid State Restore: ',stateful, state );",
+                            ""
+                        ],
+                        "name": "staterestore",
+                        "scope": "me"
+                    },
+                    "configAlternates": {
+                        "fn": "string",
+                        "implHandler": "code",
+                        "name": "string",
+                        "scope": "string"
+                    },
+                    "name": "onGridbStateRestore",
+                    "designerId": "f60e458c-bdf3-4c48-9453-817e93a80268"
+                },
+                {
+                    "type": "Ext.grid.feature.Summary",
+                    "reference": {
+                        "name": "features",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dock": "top"
+                    },
+                    "configAlternates": {
+                        "dock": "string"
+                    },
+                    "name": "MySummaryFeature",
+                    "designerId": "52201acf-569a-4bf1-be04-2fa594d1597d"
+                },
+                {
+                    "type": "Ext.toolbar.Toolbar",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dock": "top"
+                    },
+                    "configAlternates": {
+                        "dock": "string"
+                    },
+                    "name": "MyToolbar1",
+                    "designerId": "dc2a5413-a4fe-4b4f-af9e-53510fd13c87",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "hidden": true,
+                                "layout|flex": null,
+                                "text": "Export"
+                            },
+                            "configAlternates": {
+                                "hidden": "boolean",
+                                "layout|flex": "number",
+                                "text": "string"
+                            },
+                            "name": "MyButton",
+                            "designerId": "2ec50b7b-2907-4a66-9e1b-b1f7b49e1654",
+                            "cn": [
+                                {
+                                    "type": "Ext.menu.Menu",
+                                    "reference": {
+                                        "name": "menu",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "width": 120
+                                    },
+                                    "configAlternates": {
+                                        "width": "auto"
+                                    },
+                                    "name": "MyMenu",
+                                    "designerId": "549d7e75-3785-44d5-acc8-57907d919f9e",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.menu.Item",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "text": "To Excel"
+                                            },
+                                            "configAlternates": {
+                                                "text": "string"
+                                            },
+                                            "name": "MyMenuItem",
+                                            "designerId": "492f1da7-6dac-4995-ba96-5151bc76b77d",
+                                            "cn": [
+                                                {
+                                                    "type": "basiceventbinding",
+                                                    "reference": {
+                                                        "name": "listeners",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fn": "onMenuitemClick",
+                                                        "implHandler": [
+                                                            "var params = Ext.urlDecode(location.search.substring(1));",
+                                                            "console.log('Params: ', params);",
+                                                            "",
+                                                            " ",
+                                                            "        var grid = Ext.getCmp('gridb');",
+                                                            "        var dt = Ext.Date.format(new Date(), 'Y-m-d h:i:s');",
+                                                            "        grid.saveDocumentAs({",
+                                                            "            type: 'xlsx',",
+                                                            "            title: 'AR Aging By Region and Groups ' + params.GRP,",
+                                                            "            fileName: 'ARAging_By_Region_' + params.GRP + '_' + dt +'.xlsx'",
+                                                            " ",
+                                                            "",
+                                                            "",
+                                                            "});"
+                                                        ],
+                                                        "name": "click",
+                                                        "scope": "me"
+                                                    },
+                                                    "configAlternates": {
+                                                        "fn": "string",
+                                                        "implHandler": "code",
+                                                        "name": "string",
+                                                        "scope": "string"
+                                                    },
+                                                    "name": "onMenuitemClick",
+                                                    "designerId": "415548c6-77fb-44fe-a37c-13aef075994f"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.menu.Item",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "text": "To CSV"
+                                            },
+                                            "configAlternates": {
+                                                "text": "string"
+                                            },
+                                            "name": "MyMenuItem1",
+                                            "designerId": "7dde0014-9b1d-44d2-ad35-ebb6cd841786",
+                                            "cn": [
+                                                {
+                                                    "type": "basiceventbinding",
+                                                    "reference": {
+                                                        "name": "listeners",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fn": "onMenuitemClick1",
+                                                        "implHandler": [
+                                                            " var params = Ext.urlDecode(location.search.substring(1));",
+                                                            "        console.log('Params: ', params);",
+                                                            "var grid = Ext.getCmp('gridb');",
+                                                            "var dt = Ext.Date.format(new Date(), 'Y-m-d h:i:s');",
+                                                            "grid.saveDocumentAs({",
+                                                            "    type: 'csv',",
+                                                            "    title: 'AR Aging By Region and Groups ' + params.GRP,",
+                                                            "    fileName: 'ARAging_By_Region_' + params.GRP + '_' + dt +'.csv'",
+                                                            "});"
+                                                        ],
+                                                        "name": "click",
+                                                        "scope": "me"
+                                                    },
+                                                    "configAlternates": {
+                                                        "fn": "string",
+                                                        "implHandler": "code",
+                                                        "name": "string",
+                                                        "scope": "string"
+                                                    },
+                                                    "name": "onMenuitemClick1",
+                                                    "designerId": "a4ddd502-cf34-439b-98d7-bfdc2e17aeb4"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.menu.Item",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "text": "to HTML"
+                                            },
+                                            "configAlternates": {
+                                                "text": "string"
+                                            },
+                                            "name": "MyMenuItem2",
+                                            "designerId": "329e0954-79e2-43dc-a6ac-632ff597d65f",
+                                            "cn": [
+                                                {
+                                                    "type": "basiceventbinding",
+                                                    "reference": {
+                                                        "name": "listeners",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fn": "onMenuitemDestroy",
+                                                        "implHandler": [
+                                                            " var params = Ext.urlDecode(location.search.substring(1));",
+                                                            "var grid = Ext.getCmp('gridb');",
+                                                            "var dt = Ext.Date.format(new Date(), 'Y-m-d h:i:s');",
+                                                            "grid.saveDocumentAs({",
+                                                            "    type: 'html',",
+                                                            "    title: 'AR Aging By Region and Groups ' + params.GRP,",
+                                                            "    fileName: 'ARAging_By_Region' + params.GRP + '_' + dt +'.html'",
+                                                            "});"
+                                                        ],
+                                                        "name": "destroy",
+                                                        "scope": "me"
+                                                    },
+                                                    "configAlternates": {
+                                                        "fn": "string",
+                                                        "implHandler": "code",
+                                                        "name": "string",
+                                                        "scope": "string"
+                                                    },
+                                                    "name": "onMenuitemDestroy",
+                                                    "designerId": "9a35675f-7726-4895-8ae4-a18173d88af6"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.plugin.Exporter",
+                    "reference": {
+                        "name": "plugins",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "name": "MyGridExporterPlugin",
+                    "designerId": "fe38a403-907b-4c35-9206-750980aa759e"
+                }
+            ]
+        }
+    ]
+}

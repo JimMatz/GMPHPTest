@@ -1,0 +1,94 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": true,
+        "autoSync": true,
+        "designer|userClassName": "storeRgn",
+        "model": "modelRgn",
+        "statefulFilters": true,
+        "storeId": "storeRgn"
+    },
+    "configAlternates": {
+        "autoLoad": "boolean",
+        "autoSync": "boolean",
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string",
+        "statefulFilters": "boolean"
+    },
+    "name": "MyJsonStore1",
+    "designerId": "e5b71b9a-ed2d-424e-9144-99ee78a0beb9",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "url": "/Gemini/AR/getAgeGroupsbyRegion.php?DB=GI"
+            },
+            "configAlternates": {
+                "url": "string"
+            },
+            "name": "MyAjaxProxy",
+            "designerId": "503453e8-5dec-472f-bfff-0f7bea136e83",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "root"
+                    },
+                    "configAlternates": {
+                        "rootProperty": "string"
+                    },
+                    "name": "MyJsonReader",
+                    "designerId": "0453519a-28e6-4d17-9f60-4dd3df5f1e6e"
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onJsonstoreBeforeLoad",
+                "implHandler": [
+                    " var params = Ext.urlDecode(location.search.substring(1));",
+                    "console.log('Params: ', params);",
+                    "",
+                    "store.getProxy().extraParams = {",
+                    "    RGN: params.RGN,",
+                    "    GRP: params.GRP",
+                    "};",
+                    "",
+                    "store.setStatefulFilters(true);"
+                ],
+                "name": "beforeload",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onJsonstoreBeforeLoad",
+            "designerId": "9d13f797-3a52-43b9-abd4-6eb0f32c999a"
+        }
+    ]
+}

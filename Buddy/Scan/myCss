@@ -1,0 +1,6 @@
+.redButton {
+    background-image: url(../Button_Red.png) !important;
+}
+.greenButton {
+    background-image: url(../Button_Green.png) !important;
+}

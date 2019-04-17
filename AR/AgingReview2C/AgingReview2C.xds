@@ -1,0 +1,64 @@
+{
+    "name": "AgingReview2C",
+    "settings": {
+        "cmd": {
+            "license": "commercial",
+            "cmdVersion": "6.7.0.63",
+            "frameworkVersion": "6.6.0.258"
+        },
+        "urlPrefixTemplate": "http://localhost:{port}/{path}",
+        "urlPrefix": "http://localhost:50294/",
+        "canvasControls": {
+            "viewportSize": {
+                "name": "Auto Expand",
+                "builtIn": true,
+                "height": null,
+                "width": null
+            }
+        },
+        "exportPath": "",
+        "spacesToIndent": 4,
+        "sdkPath": "",
+        "lineEnding": "CRLF",
+        "genTimestamps": false,
+        "cacheBust": false,
+        "buildShouldOverwriteIndex": true,
+        "generateArchitectVersion": true,
+        "lastBuildSelection": {
+            "value": "webBuild",
+            "display": "Build web app",
+            "buildPlatform": false
+        },
+        "installStatus": "Not Installed"
+    },
+    "xdsVersion": "4.2.5",
+    "xdsBuild": 420,
+    "schemaVersion": 1,
+    "upgradeVersion": 310000000001,
+    "framework": "ext66",
+    "viewOrderMap": {
+        "view": [
+            "abbaaab4-48a9-44dc-847b-67e5bf26ffe5",
+            "04ec0c4c-d095-4972-ae1d-68bf3cf1a51d",
+            "0efa8715-5f17-4ad6-824f-628b7544006a"
+        ],
+        "store": [
+            "93a27b3d-c0e4-4d7a-8a1b-4ff4531b44c7"
+        ],
+        "controller": [
+            "46d4bb31-a9a1-447e-913e-ed74568085ac"
+        ],
+        "model": [
+            "b9fc8c97-4897-4319-99eb-9484d340b7ac"
+        ],
+        "resource": [
+            "499687c0-d7ce-499e-85c1-6c33b8307eff",
+            "e5a4ccf2-3ef1-4eed-8be3-6e4d9cfb18ef",
+            "f5a7eaf5-e5ad-44d8-aded-60d64de6a66e",
+            "cd384a2c-aa91-49e1-9272-131093b569d7"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}

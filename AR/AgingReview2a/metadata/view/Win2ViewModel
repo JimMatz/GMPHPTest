@@ -1,0 +1,53 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "win2",
+        "designer|userClassName": "Win2ViewModel"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
+    "designerId": "b0ebd74d-1f05-4fd6-bb6d-3597496af601",
+    "cn": [
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "data": [
+                    "[{\"USR\":\"nostrum\",\"TAG\":\"occaecati\",\"TAGD\":\"error\",\"TAGV\":\"in\",\"TAGACTIVE\":false},{\"USR\":\"omnis\",\"TAG\":\"vitae\",\"TAGD\":\"corporis\",\"TAGV\":\"minima\",\"TAGACTIVE\":false},{\"USR\":\"alias\",\"TAG\":\"sapiente\",\"TAGD\":\"beatae\",\"TAGV\":\"placeat\",\"TAGACTIVE\":false},{\"USR\":\"consequatur\",\"TAG\":\"et\",\"TAGD\":\"ea\",\"TAGV\":\"rem\",\"TAGACTIVE\":false},{\"USR\":\"consectetur\",\"TAG\":\"qui\",\"TAGD\":\"numquam\",\"TAGV\":\"voluptatem\",\"TAGACTIVE\":true},{\"USR\":\"quia\",\"TAG\":\"blanditiis\",\"TAGD\":\"soluta\",\"TAGV\":\"nemo\",\"TAGACTIVE\":false},{\"USR\":\"nesciunt\",\"TAG\":\"molestiae\",\"TAGD\":\"fuga\",\"TAGV\":\"nemo\",\"TAGACTIVE\":false},{\"USR\":\"error\",\"TAG\":\"ab\",\"TAGD\":\"facilis\",\"TAGV\":\"maiores\",\"TAGACTIVE\":true},{\"USR\":\"corporis\",\"TAG\":\"et\",\"TAGD\":\"vero\",\"TAGV\":\"in\",\"TAGACTIVE\":false},{\"USR\":\"qui\",\"TAG\":\"rerum\",\"TAGD\":\"iusto\",\"TAGV\":\"suscipit\",\"TAGACTIVE\":false},{\"USR\":\"tempore\",\"TAG\":\"accusantium\",\"TAGD\":\"aliquam\",\"TAGV\":\"et\",\"TAGACTIVE\":true},{\"USR\":\"quo\",\"TAG\":\"iste\",\"TAGD\":\"error\",\"TAGV\":\"ab\",\"TAGACTIVE\":false},{\"USR\":\"laudantium\",\"TAG\":\"neque\",\"TAGD\":\"ut\",\"TAGV\":\"voluptas\",\"TAGACTIVE\":false},{\"USR\":\"officiis\",\"TAG\":\"quo\",\"TAGD\":\"eligendi\",\"TAGV\":\"qui\",\"TAGACTIVE\":false},{\"USR\":\"ut\",\"TAG\":\"minus\",\"TAGD\":\"nihil\",\"TAGV\":\"autem\",\"TAGACTIVE\":true},{\"USR\":\"et\",\"TAG\":\"repellendus\",\"TAGD\":\"vitae\",\"TAGV\":\"et\",\"TAGACTIVE\":false},{\"USR\":\"rem\",\"TAG\":\"magni\",\"TAGD\":\"odio\",\"TAGV\":\"eum\",\"TAGACTIVE\":true},{\"USR\":\"ut\",\"TAG\":\"ab\",\"TAGD\":\"nihil\",\"TAGV\":\"temporibus\",\"TAGACTIVE\":false},{\"USR\":\"autem\",\"TAG\":\"excepturi\",\"TAGD\":\"qui\",\"TAGV\":\"reiciendis\",\"TAGACTIVE\":false},{\"USR\":\"commodi\",\"TAG\":\"error\",\"TAGD\":\"doloribus\",\"TAGV\":\"minima\",\"TAGACTIVE\":true},{\"USR\":\"rem\",\"TAG\":\"rerum\",\"TAGD\":\"et\",\"TAGV\":\"voluptatem\",\"TAGACTIVE\":true},{\"USR\":\"molestiae\",\"TAG\":\"enim\",\"TAGD\":\"velit\",\"TAGV\":\"earum\",\"TAGACTIVE\":false},{\"USR\":\"sapiente\",\"TAG\":\"id\",\"TAGD\":\"iusto\",\"TAGV\":\"molestias\",\"TAGACTIVE\":true},{\"USR\":\"sint\",\"TAG\":\"incidunt\",\"TAGD\":\"dolore\",\"TAGV\":\"voluptas\",\"TAGACTIVE\":true},{\"USR\":\"sed\",\"TAG\":\"quas\",\"TAGD\":\"quam\",\"TAGV\":\"cupiditate\",\"TAGACTIVE\":true},{\"USR\":\"est\",\"TAG\":\"temporibus\",\"TAGD\":\"magni\",\"TAGV\":\"et\",\"TAGACTIVE\":true},{\"USR\":\"aut\",\"TAG\":\"officiis\",\"TAGD\":\"eligendi\",\"TAGV\":\"non\",\"TAGACTIVE\":true},{\"USR\":\"quasi\",\"TAG\":\"qui\",\"TAGD\":\"inventore\",\"TAGV\":\"suscipit\",\"TAGACTIVE\":false},{\"USR\":\"iusto\",\"TAG\":\"mollitia\",\"TAGD\":\"quae\",\"TAGV\":\"nihil\",\"TAGACTIVE\":false},{\"USR\":\"magni\",\"TAG\":\"atque\",\"TAGD\":\"quae\",\"TAGV\":\"nemo\",\"TAGACTIVE\":false}]"
+                ],
+                "model": "modelDefaults",
+                "name": "modelDefaults"
+            },
+            "configAlternates": {
+                "data": "array",
+                "model": "model",
+                "name": "string"
+            },
+            "name": "modelDefaults",
+            "designerId": "97dfaf4a-782b-4b53-9b80-54787dd45f9b",
+            "cn": [
+                {
+                    "type": "Ext.data.proxy.Memory",
+                    "reference": {
+                        "name": "proxy",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyMemoryProxy",
+                    "designerId": "477423de-d842-4836-a202-d5859eaf619f"
+                }
+            ]
+        }
+    ]
+}

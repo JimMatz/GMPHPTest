@@ -1,0 +1,529 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "win2",
+        "designer|userClassName": "Win2",
+        "height": 442,
+        "id": "win2",
+        "layout": "fit",
+        "title": "Properties for ",
+        "width": 912
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "layout": "string",
+        "title": "string",
+        "width": "auto",
+        "id": "string"
+    },
+    "name": "MyWindow",
+    "designerId": "3e21f4ab-c9c1-417f-a5a4-17a4bf5718a5",
+    "viewControllerInstanceId": "f3712b44-2786-4b81-993f-4ca8c80ba0ed",
+    "viewModelInstanceId": "b0ebd74d-1f05-4fd6-bb6d-3597496af601",
+    "cn": [
+        {
+            "type": "Ext.grid.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "id": "gridDefaults",
+                "store": [
+                    "store_Defaults"
+                ]
+            },
+            "configAlternates": {
+                "store": "binding",
+                "id": "string"
+            },
+            "name": "MyGridPanel1",
+            "designerId": "a11c9939-58ab-4029-a11a-72976d0013ab",
+            "cn": [
+                {
+                    "type": "Ext.view.Table",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyTable1",
+                    "designerId": "bb81c8bd-1887-4aa2-ae12-6e316c522f7b"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "USR",
+                        "hidden": true,
+                        "text": "User"
+                    },
+                    "configAlternates": {
+                        "dataIndex": "datafield",
+                        "hidden": "boolean",
+                        "text": "string"
+                    },
+                    "name": "MyColumn3",
+                    "designerId": "fd7a13b7-eaca-4aa8-8369-f775551fd5c8"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "TAG",
+                        "text": "Property"
+                    },
+                    "configAlternates": {
+                        "dataIndex": "datafield",
+                        "text": "string"
+                    },
+                    "name": "MyColumn4",
+                    "designerId": "d3cf82ab-707c-48c7-97a9-6c30653a5430"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "TAGD",
+                        "text": "Description",
+                        "width": 186
+                    },
+                    "configAlternates": {
+                        "dataIndex": "datafield",
+                        "text": "string",
+                        "width": "auto"
+                    },
+                    "name": "MyColumn5",
+                    "designerId": "6e54ea77-3c2d-4c1f-bf47-9db391e5c570"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "TAGV",
+                        "text": "Value"
+                    },
+                    "configAlternates": {
+                        "dataIndex": "datafield",
+                        "text": "string"
+                    },
+                    "name": "MyColumn6",
+                    "designerId": "e704a783-0276-43c4-851d-4474728dab9e"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "TAGACTIVE",
+                        "hidden": true,
+                        "text": "Active"
+                    },
+                    "configAlternates": {
+                        "dataIndex": "datafield",
+                        "hidden": "boolean",
+                        "text": "string"
+                    },
+                    "name": "MyColumn8",
+                    "designerId": "cbe2e5bd-5919-448a-98d7-7712dc9b7066"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "align": "center",
+                        "dataIndex": "TAGTYPE",
+                        "text": "Type",
+                        "width": 50
+                    },
+                    "configAlternates": {
+                        "dataIndex": "datafield",
+                        "hidden": "boolean",
+                        "text": "string",
+                        "align": "string",
+                        "width": "auto"
+                    },
+                    "name": "MyColumn2",
+                    "designerId": "371098f1-e127-4dd9-84f6-8d596b267228"
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onGridpanelAfterRender",
+                        "implHandler": [
+                            "Ext.Ajax.request({",
+                            "   url: 'http://192.168.100.80:10088/Gemini/AR/getCurUser.php?DB=GI',",
+                            "   success: function(response, opts) {",
+                            "      var src = Ext.decode(response.responseText);",
+                            "       console.log('Source ',src);",
+                            "       Ext.getCmp('win2').setTitle('Proprties for ' + src);",
+                            "",
+                            "   }",
+                            "});"
+                        ],
+                        "name": "afterrender",
+                        "scope": "me"
+                    },
+                    "configAlternates": {
+                        "fn": "string",
+                        "implHandler": "code",
+                        "name": "string",
+                        "scope": "string"
+                    },
+                    "name": "onGridpanelAfterRender",
+                    "designerId": "cf69f854-1071-400b-91ec-6e665a7e9169"
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onGridDefaultsRowDblClick",
+                        "implHandler": [
+                            "winName = 'win1' + Ext.String.trim(record.data.TAG) ;",
+                            "formName = 'form1' + Ext.String.trim(record.data.TAG) ;",
+                            "w1 = Ext.getCmp(winName);",
+                            "if (w1) {",
+                            "    w1.close();",
+                            "}",
+                            "",
+                            "",
+                            "if (record.data.TAGTYPE == 'D'){",
+                            "    tagv = Ext.Date.parse(Ext.String.trim(record.data.TAGV),'Y-m-d');",
+                            "    var field = {",
+                            "        xtype: 'datefield',",
+                            "        anchor: '100%',",
+                            "        submitFormat: 'Y-m-d',",
+                            "        fieldLabel: Ext.String.trim(record.data.TAGD),",
+                            "        name: 'TAGV'",
+                            "    };",
+                            "",
+                            "} // end D types",
+                            "",
+                            "if (record.data.TAGTYPE == 'S'){",
+                            "    tagv = Ext.String.trim(record.data.TAGV);",
+                            "    var field = {",
+                            "        xtype: 'textfield',",
+                            "        anchor: '100%',",
+                            "",
+                            "        fieldLabel: Ext.String.trim(record.data.TAGD),",
+                            "        name: 'TAGV'",
+                            "    };",
+                            "",
+                            "} // end S types",
+                            "",
+                            "if (record.data.TAGTYPE == 'N'){",
+                            "    tagv = Ext.String.trim(record.data.TAGV);",
+                            "    var field = {",
+                            "        xtype: 'numberfield',",
+                            "        anchor: '100%',",
+                            "",
+                            "        fieldLabel: Ext.String.trim(record.data.TAGD),",
+                            "        name: 'TAGV'",
+                            "    };",
+                            "",
+                            "} // end n types",
+                            "",
+                            "if (record.data.TAGTYPE == 'B'){",
+                            "    if (Ext.String.trim(record.data.TAGV) == 'Y'){",
+                            "        tagv = 'on';",
+                            "    } else {",
+                            "        tagv = 'off';",
+                            "    }",
+                            "    var field = {",
+                            "        xtype: 'checkboxfield',",
+                            "        anchor: '100%',",
+                            "",
+                            "        boxLabel: 'Include ' + Ext.String.trim(record.data.TAGD),",
+                            "        uncheckedValue: 'N',",
+                            "        name: 'TAGV'",
+                            "    };",
+                            "",
+                            "",
+                            "} // end B types",
+                            "",
+                            "",
+                            "",
+                            "",
+                            "if (record.data.TAGTYPE == 'C'){",
+                            "    tagv = Ext.String.trim(record.data.TAGV);",
+                            "    console.log('Color: ', tagv);",
+                            "    tagv2 = Ext.String.trim(record.data.TAGV);",
+                            "    tagv2 = tagv2.substring(1,6);",
+                            "",
+                            "    cm = new Ext.create('Ext.picker.Color', {",
+                            "        //   value: tagv2,  // initial selected color",
+                            "        //    renderTo: Ext.getBody(),",
+                            "        listeners: {",
+                            "            select: function(picker, selColor) {",
+                            "                theForm.findField('TAGV').setValue('#' + selColor);",
+                            "            }",
+                            "        }",
+                            "    });",
+                            "",
+                            "    var field = {",
+                            "        xtype: 'textfield',",
+                            "        fieldLabel: 'Selected Color',",
+                            "        name: 'TAGV',",
+                            "        readOnly: true",
+                            "",
+                            "    };",
+                            "",
+                            "",
+                            "",
+                            "",
+                            "",
+                            "",
+                            "} // end C types",
+                            "",
+                            "",
+                            "",
+                            "",
+                            "var win1 = new Ext.create ('Ext.window.Window' , {",
+                            "    alias: 'widget.' + winName,",
+                            "    requires: [",
+                            "        'MyApp.view.Win1ViewModel',",
+                            "        'Ext.form.Panel',",
+                            "        'Ext.form.field.Hidden',",
+                            "        'Ext.form.field.Text'",
+                            "    ],",
+                            "",
+                            "",
+                            "    height: 461,",
+                            "    width: 431,",
+                            "    layout: 'fit',",
+                            "",
+                            "",
+                            "    title: 'My Window',",
+                            "    id: winName,",
+                            "    defaultListenerScope: true,",
+                            "",
+                            "    items: [",
+                            "        {",
+                            "            xtype: 'form',",
+                            "            id: formName,",
+                            "            bodyPadding: 10,",
+                            "            url: '/Gemini/AR/SetDefault.php?DB=GI',",
+                            "",
+                            "            items: [",
+                            "                {",
+                            "                    xtype: 'hiddenfield',",
+                            "                    anchor: '100%',",
+                            "",
+                            "                    fieldLabel: 'Label',",
+                            "                    name: 'USR'",
+                            "                },",
+                            "                {",
+                            "                    xtype: 'hiddenfield',",
+                            "                    anchor: '100%',",
+                            "",
+                            "                    fieldLabel: 'Label',",
+                            "                    name: 'TAG'",
+                            "                },",
+                            "                {",
+                            "                    xtype: 'textfield',",
+                            "                    anchor: '100%',",
+                            "",
+                            "                    fieldLabel: 'Description',",
+                            "                    name: 'TAGD',",
+                            "                    listeners: {",
+                            "                        click: function(component, event, eOpts) {",
+                            "                            console.log('valueChanged');",
+                            "                        }",
+                            "                    }",
+                            "                },",
+                            "                {",
+                            "                    xtype: 'hiddenfield',",
+                            "                    anchor: '100%',",
+                            "",
+                            "                    fieldLabel: 'Label',",
+                            "                    name: 'TAGACTIVE'",
+                            "                },",
+                            "                {",
+                            "                    xtype: 'hiddenfield',",
+                            "                    anchor: '100%',",
+                            "",
+                            "                    fieldLabel: 'Label',",
+                            "                    name: 'TAGTYPE'",
+                            "                },",
+                            "                field",
+                            "            ]",
+                            "        }",
+                            "    ]",
+                            "",
+                            "});",
+                            "",
+                            "",
+                            "win1.show ();",
+                            "form = Ext.getCmp(formName);",
+                            "theForm = form.getForm();",
+                            "",
+                            "theForm.findField('USR').setValue(record.data.USR);",
+                            "theForm.findField('TAG').setValue(record.data.TAG);",
+                            "theForm.findField('TAGD').setValue(record.data.TAGD);",
+                            "theForm.findField('TAGACTIVE').setValue(record.data.TAGACTIVE);",
+                            "theForm.findField('TAGTYPE').setValue(record.data.TAGTYPE);",
+                            "",
+                            "console.log('tag value: ',record.data.TAGV );",
+                            "theForm.findField('TAGV').setValue(tagv);",
+                            "",
+                            "win1.setTitle('Set Property Value for ' + record.data.TAGD);",
+                            "",
+                            "//form = Ext.getCmp('formProp');",
+                            "",
+                            "",
+                            "",
+                            "//if (record.data.TAGTYPE == 'B'){",
+                            "//    if (Ext.String.trim(record.data.TAGV) == 'Y'){",
+                            "//        tagv = 'on';",
+                            "//    } else {",
+                            "//        tagv = 'off';",
+                            "//    }",
+                            "//   form.add(new Ext.form.Checkbox({",
+                            "//        anchor: '100%',",
+                            "//",
+                            "//        boxLabel: 'Include ' + Ext.String.trim(record.data.TAGD),",
+                            "//",
+                            "//        name: 'TAGV'",
+                            "//    }));",
+                            "//    console.log('tag value: ',record.data.TAGV );",
+                            "//    theForm.findField('TAGV').setValue(tagv);",
+                            "//} // end B types",
+                            "",
+                            "",
+                            "if (record.data.TAGTYPE == 'C'){",
+                            "    tagv = Ext.String.trim(record.data.TAGV);",
+                            "    console.log('Color: ', tagv);",
+                            "    tagv2 = Ext.String.trim(record.data.TAGV);",
+                            "    tagv2 = tagv2.substring(1,6);",
+                            "",
+                            "    cm = new Ext.create('Ext.picker.Color', {",
+                            "        //   value: tagv2,  // initial selected color",
+                            "        //    renderTo: Ext.getBody(),",
+                            "        listeners: {",
+                            "            select: function(picker, selColor) {",
+                            "                theForm.findField('TAGV').setValue('#' + selColor);",
+                            "            }",
+                            "        }",
+                            "    });",
+                            "",
+                            "",
+                            "",
+                            "",
+                            "",
+                            "    form.add(cm);",
+                            "",
+                            "",
+                            "} // end C types",
+                            "",
+                            "",
+                            "form.add(",
+                            "    new Ext.button.Button(",
+                            "        {fieldLabel:'Save',",
+                            "         text:'Save',",
+                            "         iconCls: 'x-fa fa-download',",
+                            "",
+                            "         handler: function () {",
+                            "             var theForm = Ext.getCmp(formName).getForm();",
+                            "             console.log('Save Button Pushed: ' ,theForm);",
+                            "",
+                            "             if (theForm.isValid()) {",
+                            "                 theForm.submit({",
+                            "                     success: function (form, action) {",
+                            "                         // Ext.Msg.alert('Success', action.result.message);",
+                            "                         Ext.getCmp(winName).close();",
+                            "                         Ext.getStore('store_Defaults').load();",
+                            "",
+                            "                     },",
+                            "                     failure: function (form, action) {",
+                            "                         Ext.Msg.alert('Failed', action.result ? action.result.message : 'No response');",
+                            "                     }",
+                            "                 });",
+                            "             }",
+                            "",
+                            "",
+                            "         }",
+                            "",
+                            "",
+                            "        }));",
+                            ""
+                        ],
+                        "name": "rowdblclick",
+                        "scope": "me"
+                    },
+                    "configAlternates": {
+                        "fn": "string",
+                        "implHandler": "code",
+                        "name": "string",
+                        "scope": "string"
+                    },
+                    "name": "onGridDefaultsRowDblClick",
+                    "designerId": "7d6655c1-833f-4bfa-80c5-4c2e0315988c"
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onWin2Close",
+                "implHandler": [
+                    "window.location.reload();"
+                ],
+                "name": "close",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onWin2Close",
+            "designerId": "2bc8f264-1b81-41c7-a357-88c710f19215"
+        }
+    ]
+}

@@ -1,0 +1,1144 @@
+{
+    "type": "Ext.container.Viewport",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|initialView": true,
+        "designer|userAlias": "myviewport",
+        "designer|userClassName": "MyViewport",
+        "height": 335,
+        "layout": "fit",
+        "width": 639
+    },
+    "configAlternates": {
+        "designer|initialView": "boolean",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "layout": "string",
+        "width": "auto"
+    },
+    "name": "MyViewport",
+    "designerId": "8c0458f1-4407-49ac-9aed-ccafb414313a",
+    "viewControllerInstanceId": "7e73c3e4-a949-47c8-927d-a6a5a6b72634",
+    "viewModelInstanceId": "ef3bcb9c-1297-4218-b734-6319d1297e52",
+    "cn": [
+        {
+            "type": "Ext.panel.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "container|align": "stretch",
+                "id": "pnlMain",
+                "layout": "vbox",
+                "title": "Buddy Check Components"
+            },
+            "configAlternates": {
+                "layout": "string",
+                "container|align": "string",
+                "id": "string",
+                "title": "string"
+            },
+            "name": "MyPanel",
+            "designerId": "bd6055f2-9891-4646-bae4-83ffac289ef2",
+            "cn": [
+                {
+                    "type": "Ext.form.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "bodyPadding": 10,
+                        "designer|snapToGrid": 10,
+                        "height": 300,
+                        "id": "formCmp",
+                        "layout": "absolute",
+                        "url": "/Gemini/Buddy/MCrud.php"
+                    },
+                    "configAlternates": {
+                        "bodyPadding": "auto",
+                        "designer|snapToGrid": "number",
+                        "height": "auto",
+                        "id": "string",
+                        "layout": "string",
+                        "layout|region": "string",
+                        "url": "string"
+                    },
+                    "name": "MyForm",
+                    "designerId": "51fc5b83-5c3b-4858-8d91-ca331d4e7f6e",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Number",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "allowBlank": false,
+                                "fieldLabel": "Order",
+                                "id": "ord",
+                                "layout|x": 10,
+                                "layout|y": 10,
+                                "name": "ord",
+                                "selectOnFocus": true
+                            },
+                            "configAlternates": {
+                                "fieldLabel": "string",
+                                "id": "string",
+                                "layout|x": "number",
+                                "layout|y": "number",
+                                "allowBlank": "boolean",
+                                "name": "string",
+                                "selectOnFocus": "boolean"
+                            },
+                            "name": "MyNumberField",
+                            "designerId": "2d12b00d-0bb5-40f4-9dee-a8b3b2f800be",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onOrdBlur",
+                                        "implHandler": [
+                                            "var ord = component.value;",
+                                            "",
+                                            "Ext.Ajax.request({",
+                                            "        url: '/Gemini/Buddy/getCust.php?DB=GI&ORD=' + ord  ,",
+                                            "        method: 'GET',",
+                                            "        async: false,",
+                                            "        success: function(response, opts) {",
+                                            "            //  console.log(response);",
+                                            "            var obj = response.responseText;",
+                                            "             // console.log(obj);",
+                                            "           // Ext.getStore('MyJsonStore').load();",
+                                            "            Ext.getCmp('pnlMain').setTitle('Buddy Check Components for ' + obj);",
+                                            "",
+                                            "           Ext.Ajax.request({",
+                                            "        url: '/Gemini/Buddy/getCpy.php?DB=GI&ORD=' + ord  ,",
+                                            "        method: 'GET',",
+                                            "        async: false,",
+                                            "        success: function(response, opts) {",
+                                            "            //  console.log(response);",
+                                            "            var obj = response.responseText;",
+                                            "              console.log('copy count: ', obj);",
+                                            "            Ext.getCmp('copy').setVisible(true);",
+                                            "            Ext.getCmp('copy').setValue(obj);",
+                                            "",
+                                            "        },",
+                                            "",
+                                            "        failure: function(response, opts) {",
+                                            "            console.log(response);",
+                                            "          //  console.log('server-side failure with status code ' + response.status);",
+                                            "        }",
+                                            "    });",
+                                            "",
+                                            "",
+                                            "        },",
+                                            "",
+                                            "        failure: function(response, opts) {",
+                                            "            console.log(response);",
+                                            "          //  console.log('server-side failure with status code ' + response.status);",
+                                            "        }",
+                                            "    });",
+                                            "",
+                                            "Ext.getCmp('btnPrint').setVisible(true);",
+                                            "Ext.getCmp('reset').setVisible(true);",
+                                            "store = Ext.getStore('storeM');",
+                                            "store.load({",
+                                            "    params:{",
+                                            "        ORD: ord",
+                                            "    }",
+                                            "});"
+                                        ],
+                                        "name": "blur",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onOrdBlur",
+                                    "designerId": "67541385-b12b-4969-95ce-71947a73cf53"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "allowBlank": false,
+                                "enforceMaxLength": true,
+                                "fieldLabel": "Component",
+                                "id": "cmp",
+                                "layout|x": 10,
+                                "layout|y": 50,
+                                "maxLength": 200,
+                                "name": "cmp",
+                                "selectOnFocus": true,
+                                "width": 480
+                            },
+                            "configAlternates": {
+                                "enforceMaxLength": "boolean",
+                                "fieldLabel": "string",
+                                "id": "string",
+                                "layout|x": "number",
+                                "layout|y": "number",
+                                "maxLength": "number",
+                                "width": "auto",
+                                "allowBlank": "boolean",
+                                "name": "string",
+                                "selectOnFocus": "boolean"
+                            },
+                            "name": "MyTextField",
+                            "designerId": "2ca4f66a-df8e-4177-8aa4-aa952e7e29fd",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onCmpBlur",
+                                        "implHandler": [
+                                            "v = component.value;",
+                                            "id = Ext.getCmp('cmpid');",
+                                            "idv = id.value;",
+                                            "console.log(v, id);",
+                                            "if (idv === ''){",
+                                            "    id.setValue(v.charAt(0));",
+                                            "    Ext.getCmp('cmpqty').focus();",
+                                            "}"
+                                        ],
+                                        "name": "blur",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onCmpBlur",
+                                    "designerId": "ca43b4e0-7354-4cf6-aa23-9634300ce83f"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "allowBlank": false,
+                                "enforceMaxLength": true,
+                                "fieldLabel": " ID",
+                                "id": "cmpid",
+                                "layout|x": 10,
+                                "layout|y": 90,
+                                "maxLength": 3,
+                                "name": "cmpid",
+                                "width": 150
+                            },
+                            "configAlternates": {
+                                "enforceMaxLength": "boolean",
+                                "fieldLabel": "string",
+                                "id": "string",
+                                "layout|x": "number",
+                                "layout|y": "number",
+                                "maxLength": "number",
+                                "width": "auto",
+                                "allowBlank": "boolean",
+                                "name": "string"
+                            },
+                            "name": "MyTextField1",
+                            "designerId": "37331904-be4e-4376-98cd-c233fbea3cf8"
+                        },
+                        {
+                            "type": "Ext.form.field.Number",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "allowBlank": false,
+                                "fieldLabel": "Quantity",
+                                "id": "cmpqty",
+                                "layout|x": 180,
+                                "layout|y": 90,
+                                "maxValue": 999,
+                                "minValue": 1,
+                                "name": "cmpqty",
+                                "selectOnFocus": true,
+                                "width": 180
+                            },
+                            "configAlternates": {
+                                "fieldLabel": "string",
+                                "id": "string",
+                                "layout|x": "number",
+                                "layout|y": "number",
+                                "maxValue": "number",
+                                "minValue": "number",
+                                "width": "auto",
+                                "allowBlank": "boolean",
+                                "name": "string",
+                                "selectOnFocus": "boolean"
+                            },
+                            "name": "MyNumberField1",
+                            "designerId": "261f520f-4b96-4d8b-94d9-964d350fe45f"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "enforceMaxLength": true,
+                                "fieldLabel": "UOM",
+                                "id": "uom",
+                                "layout|x": 380,
+                                "layout|y": 90,
+                                "maxLength": 10,
+                                "name": "uom",
+                                "width": 200
+                            },
+                            "configAlternates": {
+                                "enforceMaxLength": "boolean",
+                                "fieldLabel": "string",
+                                "id": "string",
+                                "layout|x": "number",
+                                "layout|y": "number",
+                                "maxLength": "number",
+                                "width": "auto",
+                                "name": "string"
+                            },
+                            "name": "MyTextField2",
+                            "designerId": "0e79bd5e-5138-4791-8a88-5fef5509aaf9"
+                        },
+                        {
+                            "type": "Ext.form.field.TextArea",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Notes",
+                                "id": "cmpnotes",
+                                "layout|x": 10,
+                                "layout|y": 130,
+                                "name": "cmpnotes",
+                                "width": 580
+                            },
+                            "configAlternates": {
+                                "fieldLabel": "string",
+                                "id": "string",
+                                "layout|x": "number",
+                                "layout|y": "number",
+                                "width": "auto",
+                                "name": "string"
+                            },
+                            "name": "MyTextArea",
+                            "designerId": "15176d06-f4a3-4794-93fe-23e67d439cc0"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "id": "btnCmp",
+                                "layout|x": 110,
+                                "layout|y": 220,
+                                "text": "Add"
+                            },
+                            "configAlternates": {
+                                "id": "string",
+                                "layout|x": "number",
+                                "layout|y": "number",
+                                "text": "string"
+                            },
+                            "name": "MyButton",
+                            "designerId": "db2dc61b-a9d4-417d-bfb7-8d90e3af703f",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onBtnCmpClick",
+                                        "implHandler": [
+                                            "form = Ext.getCmp('formCmp').getForm();",
+                                            "var ord = Ext.getCmp('ord').value;",
+                                            "action = Ext.getCmp('btnCmp').text;",
+                                            "if (form.isValid()){",
+                                            "    form.submit({",
+                                            "        params: {",
+                                            "            ORD: ord,",
+                                            "            Action: action",
+                                            "        },",
+                                            "        success: function(){",
+                                            "",
+                                            "            store = Ext.getStore('storeM');",
+                                            "            store.load({",
+                                            "                params:{",
+                                            "                    ORD: ord",
+                                            "                }",
+                                            "            });",
+                                            "            Ext.getCmp('cmp').setValue('');",
+                                            "            Ext.getCmp('cmpid').setValue('');",
+                                            "            Ext.getCmp('uom').setValue('');",
+                                            "            //Ext.getCmp('cmpqty').setValue(0);",
+                                            "            Ext.getCmp('cmp').focus();",
+                                            "            Ext.getCmp('btnCmp').setText('Add');",
+                                            "",
+                                            "",
+                                            "        }",
+                                            "    });",
+                                            "",
+                                            "",
+                                            "",
+                                            "}"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onBtnCmpClick",
+                                    "designerId": "d0bebce9-9bcc-4369-b3e1-416a1c8b5db0"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "hidden": true,
+                                "id": "btnDelete",
+                                "layout|x": 190,
+                                "layout|y": 220,
+                                "text": "Delete"
+                            },
+                            "configAlternates": {
+                                "id": "string",
+                                "layout|x": "number",
+                                "layout|y": "number",
+                                "text": "string",
+                                "hidden": "boolean"
+                            },
+                            "name": "MyButton1",
+                            "designerId": "5939f0f6-26d7-4fcd-9872-430a756dd961",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onBtnCmpClick1",
+                                        "implHandler": [
+                                            "form = Ext.getCmp('formCmp').getForm();",
+                                            " var ord = Ext.getCmp('ord').value;",
+                                            "action = Ext.getCmp('btnDelete').text;",
+                                            "if (form.isValid()){",
+                                            "    form.submit({",
+                                            "        params: {",
+                                            "            ORD: ord,",
+                                            "         Action: action",
+                                            "        },",
+                                            "        success: function(){",
+                                            "",
+                                            "        store = Ext.getStore('storeM');",
+                                            "        store.load({",
+                                            "            params:{",
+                                            "                ORD: ord",
+                                            "            }",
+                                            "        });",
+                                            "            Ext.getCmp('cmp').setValue('');",
+                                            "            Ext.getCmp('cmpid').setValue('');",
+                                            "            Ext.getCmp('uom').setValue('');",
+                                            "            Ext.getCmp('cmpqty').setValue(0);",
+                                            "            Ext.getCmp('cmp').focus();",
+                                            "            Ext.getCmp('btnDelete').setVisible(false);",
+                                            "",
+                                            "",
+                                            "    }",
+                                            "    });",
+                                            "",
+                                            "",
+                                            "",
+                                            "}"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onBtnCmpClick1",
+                                    "designerId": "3042ce10-c000-4460-9827-3539c339b024"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.form.field.Hidden",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Sequence",
+                                "id": "seq",
+                                "name": "seq"
+                            },
+                            "configAlternates": {
+                                "fieldLabel": "string",
+                                "id": "string",
+                                "name": "string"
+                            },
+                            "name": "MyHiddenField",
+                            "designerId": "186f57e4-9548-476c-96c2-e5ae55df1fe8"
+                        },
+                        {
+                            "type": "Ext.toolbar.Toolbar",
+                            "reference": {
+                                "name": "dockedItems",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dock": "top",
+                                "layout|x": 573,
+                                "layout|y": 9
+                            },
+                            "configAlternates": {
+                                "dock": "string",
+                                "layout|x": "number",
+                                "layout|y": "number"
+                            },
+                            "name": "MyToolbar",
+                            "designerId": "a4ce0ca1-fce5-477e-b480-974e1e85fc73",
+                            "cn": [
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|flex": null,
+                                        "text": "New Order"
+                                    },
+                                    "configAlternates": {
+                                        "layout|flex": "number",
+                                        "text": "string"
+                                    },
+                                    "name": "MyButton3",
+                                    "designerId": "e5ee5faa-808d-443a-9048-f2935401f684",
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onButtonClick1",
+                                                "implHandler": [
+                                                    "Ext.getCmp('ord').setReadOnly(false);",
+                                                    "Ext.getCmp('ord').setValue(0);",
+                                                    "Ext.getCmp('ord').focus();",
+                                                    "Ext.getCmp('btnPrint').setVisible(false);",
+                                                    "Ext.getStore('storeReview').load();"
+                                                ],
+                                                "name": "click",
+                                                "scope": "me"
+                                            },
+                                            "configAlternates": {
+                                                "fn": "string",
+                                                "implHandler": "code",
+                                                "name": "string",
+                                                "scope": "string"
+                                            },
+                                            "name": "onButtonClick1",
+                                            "designerId": "572aa556-59f5-49b5-84ed-5d8030a801e4"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "hidden": true,
+                                        "id": "btnPrint",
+                                        "layout|flex": null,
+                                        "text": "Save and Print"
+                                    },
+                                    "configAlternates": {
+                                        "layout|flex": "number",
+                                        "text": "string",
+                                        "hidden": "boolean",
+                                        "id": "string"
+                                    },
+                                    "name": "MyButton2",
+                                    "designerId": "eff29369-b162-4023-ac86-9e25eff3ca37",
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onButtonClick",
+                                                "implHandler": [
+                                                    "var ord = Ext.getCmp('ord').value;",
+                                                    "Ext.Ajax.request({",
+                                                    "    url: '/Gemini/Buddy/Print.php?DB=GI&ORD=' + ord,",
+                                                    "    method: 'GET',",
+                                                    "    async: false,",
+                                                    "    success: function(response, opts) {",
+                                                    "        //  console.log(response);",
+                                                    "        var obj = response.responseText;",
+                                                    "        //  console.dir(obj);",
+                                                    "        Ext.getStore('storeM').load();",
+                                                    "    },",
+                                                    "",
+                                                    "    failure: function(response, opts) {",
+                                                    "        console.log(response);",
+                                                    "        console.log('server-side failure with status code ' + response.status);",
+                                                    "    }",
+                                                    "});",
+                                                    "Ext.getCmp('ord').setReadOnly(false);",
+                                                    "Ext.getCmp('ord').setValue(0);",
+                                                    "Ext.getCmp('ord').focus();",
+                                                    "Ext.getCmp('btnPrint').setVisible(false);"
+                                                ],
+                                                "name": "click",
+                                                "scope": "me"
+                                            },
+                                            "configAlternates": {
+                                                "fn": "string",
+                                                "implHandler": "code",
+                                                "name": "string",
+                                                "scope": "string"
+                                            },
+                                            "name": "onButtonClick",
+                                            "designerId": "3e160da1-1137-4ca7-bf84-e8015b089205"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "hidden": true,
+                                        "id": "reset",
+                                        "layout|flex": null,
+                                        "text": "Reset and Default"
+                                    },
+                                    "configAlternates": {
+                                        "layout|flex": "number",
+                                        "text": "string",
+                                        "hidden": "boolean",
+                                        "id": "string"
+                                    },
+                                    "name": "MyButton4",
+                                    "designerId": "55c52bbd-1ee8-4882-84fe-d402e7fc85ef",
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onButtonClick2",
+                                                "implHandler": [
+                                                    "var ord = Ext.getCmp('ord').value;",
+                                                    "Ext.Ajax.request({",
+                                                    "    url: '/Gemini/Buddy/ResetDetail.php?DB=GI&ORD=' + ord,",
+                                                    "    method: 'GET',",
+                                                    "    async: false,",
+                                                    "    success: function(response, opts) {",
+                                                    "        //  console.log(response);",
+                                                    "        var obj = response.responseText;",
+                                                    "        //  console.dir(obj);",
+                                                    "        Ext.getStore('storeM').load();",
+                                                    "    },",
+                                                    "",
+                                                    "    failure: function(response, opts) {",
+                                                    "        console.log(response);",
+                                                    "        console.log('server-side failure with status code ' + response.status);",
+                                                    "    }",
+                                                    "});",
+                                                    "Ext.getCmp('btnPrint').setVisible(true);",
+                                                    "Ext.getCmp('reset').setVisible(true);",
+                                                    "store = Ext.getStore('storeM');",
+                                                    "store.load({",
+                                                    "    params:{",
+                                                    "        ORD: ord,",
+                                                    "        DB: 'GI'",
+                                                    "    }",
+                                                    "});"
+                                                ],
+                                                "name": "click",
+                                                "scope": "me"
+                                            },
+                                            "configAlternates": {
+                                                "fn": "string",
+                                                "implHandler": "code",
+                                                "name": "string",
+                                                "scope": "string"
+                                            },
+                                            "name": "onButtonClick2",
+                                            "designerId": "a52350bb-6cd9-434a-be8e-a9f82ffc4986"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|flex": null,
+                                        "text": "Review"
+                                    },
+                                    "configAlternates": {
+                                        "layout|flex": "number",
+                                        "text": "string"
+                                    },
+                                    "name": "MyButton5",
+                                    "designerId": "e3523668-687e-49dc-b6c1-e2d7b0143869",
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onButtonClick3",
+                                                "implHandler": [
+                                                    "var winR = Ext.widget('winExists');",
+                                                    "winR.setVisible(true);",
+                                                    ""
+                                                ],
+                                                "name": "click",
+                                                "scope": "me"
+                                            },
+                                            "configAlternates": {
+                                                "fn": "string",
+                                                "implHandler": "code",
+                                                "name": "string",
+                                                "scope": "string"
+                                            },
+                                            "name": "onButtonClick3",
+                                            "designerId": "85853631-a0d6-4f9f-b279-aa7c6f4d7f20"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "icon": "../../Images/q.png",
+                                        "layout|flex": null
+                                    },
+                                    "configAlternates": {
+                                        "icon": "string",
+                                        "layout|flex": "number"
+                                    },
+                                    "name": "MyButton6",
+                                    "designerId": "cf3bf722-fbd4-4ef9-8d18-15d398273d80",
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onButtonClick4",
+                                                "implHandler": [
+                                                    "var winH = Ext.widget('winHelp');",
+                                                    "winH.setVisible(true);"
+                                                ],
+                                                "name": "click",
+                                                "scope": "me"
+                                            },
+                                            "configAlternates": {
+                                                "fn": "string",
+                                                "implHandler": "code",
+                                                "name": "string",
+                                                "scope": "string"
+                                            },
+                                            "name": "onButtonClick4",
+                                            "designerId": "966d550d-351b-47fe-81d5-dae875f70cb9"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.form.field.Display",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Copy",
+                                "hidden": true,
+                                "htmlEncode": true,
+                                "id": "copy",
+                                "layout|x": 840,
+                                "layout|y": 130,
+                                "value": "",
+                                "width": 420
+                            },
+                            "configAlternates": {
+                                "fieldLabel": "string",
+                                "hidden": "boolean",
+                                "htmlEncode": "boolean",
+                                "id": "string",
+                                "layout|x": "number",
+                                "layout|y": "number",
+                                "value": "string",
+                                "width": "auto"
+                            },
+                            "name": "MyDisplayField",
+                            "designerId": "f5c5e590-4b98-450d-a64a-c61133612c63"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "columnLines": true,
+                        "store": [
+                            "storeM"
+                        ]
+                    },
+                    "configAlternates": {
+                        "layout|region": "string",
+                        "title": "string",
+                        "store": "binding",
+                        "columnLines": "boolean"
+                    },
+                    "name": "MyGridPanel",
+                    "designerId": "4962c1be-ccfd-463a-a20d-deb6500d5cf9",
+                    "cn": [
+                        {
+                            "type": "Ext.view.Table",
+                            "reference": {
+                                "name": "viewConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "MyTable",
+                            "designerId": "251d7111-aa8b-4d11-8223-6078b624dcc4"
+                        },
+                        {
+                            "type": "Ext.grid.column.Number",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "ORDERNUM",
+                                "format": "00",
+                                "hidden": true,
+                                "text": "Order"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "format": "string",
+                                "text": "string",
+                                "hidden": "boolean"
+                            },
+                            "name": "MyNumberColumn1",
+                            "designerId": "93fb23d0-c783-4036-804c-a6848b57386b"
+                        },
+                        {
+                            "type": "Ext.grid.column.Number",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "align": "end",
+                                "dataIndex": "CMPSEQ",
+                                "format": "00",
+                                "text": "Seq",
+                                "width": 62
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "format": "string",
+                                "text": "string",
+                                "align": "string",
+                                "width": "auto"
+                            },
+                            "name": "MyNumberColumn2",
+                            "designerId": "3c617935-9b9a-4302-a862-3ae4eb3fddfc"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "COMPONENT",
+                                "text": "Component",
+                                "width": 205
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string",
+                                "width": "auto"
+                            },
+                            "name": "MyColumn1",
+                            "designerId": "8fdcb1c5-f18c-428e-987c-f6d796ccb9a4"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "align": "center",
+                                "dataIndex": "CMPID",
+                                "text": "ID",
+                                "width": 42
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string",
+                                "align": "string",
+                                "width": "auto"
+                            },
+                            "name": "MyColumn2",
+                            "designerId": "f76a13d4-3e56-4f01-b1f5-2a67510d944c"
+                        },
+                        {
+                            "type": "Ext.grid.column.Number",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "align": "end",
+                                "dataIndex": "QTY",
+                                "format": "0,000",
+                                "summaryType": "sum",
+                                "text": "Qty"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "summaryType": "string",
+                                "text": "string",
+                                "align": "string",
+                                "format": "string"
+                            },
+                            "name": "MyNumberColumn3",
+                            "designerId": "b101e33d-96c2-451a-98a8-7e1167f64a3b"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "align": "center",
+                                "dataIndex": "UOM",
+                                "text": "Uom"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string",
+                                "align": "string"
+                            },
+                            "name": "MyColumn3",
+                            "designerId": "298d523c-01ea-4819-bc6f-a0ff9024e469"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "align": "center",
+                                "dataIndex": "SEQSTATUS",
+                                "hidden": true,
+                                "text": "Stat",
+                                "width": 51
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string",
+                                "align": "string",
+                                "hidden": "boolean",
+                                "width": "auto"
+                            },
+                            "name": "MyColumn4",
+                            "designerId": "51894c65-d3b9-440e-841f-d5c6149b354d"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "CMPNOTES",
+                                "text": "Notes",
+                                "width": 693
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string",
+                                "hidden": "boolean",
+                                "width": "auto"
+                            },
+                            "name": "MyColumn5",
+                            "designerId": "40646285-600e-4fd7-a94b-339113fbad77"
+                        },
+                        {
+                            "type": "Ext.grid.feature.Summary",
+                            "reference": {
+                                "name": "features",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dock": "top"
+                            },
+                            "configAlternates": {
+                                "dock": "string"
+                            },
+                            "name": "MySummaryFeature",
+                            "designerId": "93fe8811-6bee-457c-9c4c-3bf6b27f10ba"
+                        },
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onGridpanelRowDblClick",
+                                "implHandler": [
+                                    "console.log('Record: ', record);",
+                                    "Ext.getCmp('ord').setValue(record.data.ORDERNUM);",
+                                    "Ext.getCmp('cmp').setValue(Ext.String.trim(record.data.COMPONENT));",
+                                    "Ext.getCmp('cmpid').setValue(Ext.String.trim(record.data.CMPID));",
+                                    "Ext.getCmp('cmpqty').setValue(record.data.QTY);",
+                                    "Ext.getCmp('uom').setValue(Ext.String.trim(record.data.UOM));",
+                                    "Ext.getCmp('cmpnotes').setValue(Ext.String.trim(record.data.CMPNOTES));",
+                                    "Ext.getCmp('seq').setValue(record.data.CMPSEQ);",
+                                    "Ext.getCmp('btnCmp').setText('Update');",
+                                    "Ext.getCmp('btnDelete').setVisible(true);"
+                                ],
+                                "name": "rowdblclick",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onGridpanelRowDblClick",
+                            "designerId": "acb4385e-cb5d-4b2e-87cd-92b6f8beef48"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

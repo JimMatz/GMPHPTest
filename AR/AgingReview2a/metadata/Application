@@ -1,0 +1,44 @@
+{
+    "type": "Ext.app.Application",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "controllers": [
+            "MyController"
+        ],
+        "models": [
+            "model_Rgns",
+            "model_Rgns1",
+            "modelDefaults"
+        ],
+        "name": "MyApp",
+        "stores": [
+            "store_Rgns",
+            "storecbyr",
+            "store_Rgns1",
+            "store_Defaults"
+        ],
+        "title": "Aging Review by Region",
+        "views": [
+            "MyViewport",
+            "Win2",
+            "Win1",
+            "WinRegion",
+            "WinBuild",
+            "WinHelp"
+        ]
+    },
+    "configAlternates": {
+        "models": "typedarray",
+        "name": "string",
+        "stores": "typedarray",
+        "views": "typedarray",
+        "controllers": "typedarray",
+        "title": "string"
+    },
+    "name": "Application",
+    "designerId": "application"
+}

@@ -1,0 +1,62 @@
+{
+    "name": "Scan",
+    "settings": {
+        "cmd": {
+            "license": "commercial",
+            "cmdVersion": "6.7.0.63",
+            "frameworkVersion": "6.6.0.258"
+        },
+        "urlPrefixTemplate": "http://localhost:{port}/{path}",
+        "urlPrefix": "http://localhost:62820/",
+        "canvasControls": {
+            "viewportSize": {
+                "name": "Auto Expand",
+                "builtIn": true,
+                "height": null,
+                "width": null
+            }
+        },
+        "exportPath": "",
+        "spacesToIndent": 4,
+        "sdkPath": "",
+        "lineEnding": "CRLF",
+        "genTimestamps": false,
+        "cacheBust": false,
+        "buildShouldOverwriteIndex": true,
+        "generateArchitectVersion": true,
+        "lastBuildSelection": {
+            "value": "webBuild",
+            "display": "Build web app",
+            "buildPlatform": false
+        }
+    },
+    "xdsVersion": "4.2.5",
+    "xdsBuild": 420,
+    "schemaVersion": 1,
+    "upgradeVersion": 310000000001,
+    "framework": "ext66",
+    "viewOrderMap": {
+        "view": [
+            "e66be0ce-473f-43ed-a2d5-5e2a50932b72",
+            "3f3b656a-81db-4344-b45b-6be1a1017ba5",
+            "451b06a7-1bd5-44e0-b50d-e82c9a65d53d"
+        ],
+        "store": [
+            "3c256eb8-de95-4b0e-8d41-08f4488a1c3c"
+        ],
+        "controller": [],
+        "model": [
+            "f5a66c00-4c6f-4e5a-9133-f2f5da7aba84"
+        ],
+        "resource": [
+            "004d1e85-d218-47c7-854f-487443e00593",
+            "a1aaa88a-d53f-4d5b-bd12-7c5e1aaa8c35",
+            "5a8ea60b-ce97-4d0e-ab0c-66fee5f160d1",
+            "6c82af50-33a1-49ab-a0b5-90f1c1a2903a",
+            "d4bbae88-320d-48a4-b603-511c6410dc86"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}

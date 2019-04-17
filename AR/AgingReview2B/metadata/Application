@@ -1,0 +1,38 @@
+{
+    "type": "Ext.app.Application",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "controllers": [
+            "MyController"
+        ],
+        "models": [
+            "modelRgn"
+        ],
+        "name": "MyApp",
+        "requires": [
+            "Ext.state.*"
+        ],
+        "stores": [
+            "storeRgn"
+        ],
+        "title": "Aging Review by Region/Customer",
+        "views": [
+            "MyViewport"
+        ]
+    },
+    "configAlternates": {
+        "controllers": "typedarray",
+        "models": "typedarray",
+        "name": "string",
+        "stores": "typedarray",
+        "views": "typedarray",
+        "requires": "typedarray",
+        "title": "string"
+    },
+    "name": "Application",
+    "designerId": "application"
+}

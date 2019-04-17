@@ -1,0 +1,34 @@
+{
+    "type": "Ext.app.Application",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "controllers": [
+            "MyController"
+        ],
+        "models": [
+            "modelReg"
+        ],
+        "name": "MyApp",
+        "stores": [
+            "storeRgn"
+        ],
+        "title": "Aging Review by Customer",
+        "views": [
+            "MyViewport"
+        ]
+    },
+    "configAlternates": {
+        "controllers": "typedarray",
+        "models": "typedarray",
+        "name": "string",
+        "stores": "typedarray",
+        "views": "typedarray",
+        "title": "string"
+    },
+    "name": "Application",
+    "designerId": "application"
+}

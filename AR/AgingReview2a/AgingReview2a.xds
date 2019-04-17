@@ -1,0 +1,84 @@
+{
+    "name": "AgingReview2a",
+    "settings": {
+        "cmd": {
+            "license": "commercial",
+            "cmdVersion": "6.7.0.63",
+            "frameworkVersion": "6.6.0.258"
+        },
+        "urlPrefixTemplate": "http://localhost:{port}/{path}",
+        "urlPrefix": "http://localhost:56336/",
+        "canvasControls": {
+            "viewportSize": {
+                "name": "Auto Expand",
+                "builtIn": true,
+                "height": null,
+                "width": null
+            }
+        },
+        "exportPath": "",
+        "spacesToIndent": 4,
+        "sdkPath": "",
+        "lineEnding": "CRLF",
+        "genTimestamps": false,
+        "cacheBust": false,
+        "buildShouldOverwriteIndex": true,
+        "generateArchitectVersion": true,
+        "installStatus": "Not Installed",
+        "lastBuildSelection": {
+            "value": "webBuild",
+            "display": "Build web app",
+            "buildPlatform": false
+        }
+    },
+    "xdsVersion": "4.2.5",
+    "xdsBuild": 420,
+    "schemaVersion": 1,
+    "upgradeVersion": 310000000001,
+    "framework": "ext66",
+    "viewOrderMap": {
+        "view": [
+            "fab4328a-1557-4431-b7fa-635fe0c57eac",
+            "e704fb8b-1cb7-4988-8132-51ce078d949c",
+            "c9975e5a-5014-4724-bf2c-20095b40a504",
+            "3e21f4ab-c9c1-417f-a5a4-17a4bf5718a5",
+            "b0ebd74d-1f05-4fd6-bb6d-3597496af601",
+            "f3712b44-2786-4b81-993f-4ca8c80ba0ed",
+            "de81e306-77a9-4a80-9d96-1ba056cc9e07",
+            "b7c6c93e-a54e-4001-8a42-235ad3a98b77",
+            "d1345813-807f-44b2-b31d-9903da74141f",
+            "b417e346-5cc9-4174-b44d-ecec2b910442",
+            "5bda3035-49f1-46a4-82fc-8050768df080",
+            "b8bc2e60-1219-4dc7-bdce-43061617fcdc",
+            "6b7246b7-dee6-478b-84ff-c4e34c4f6d2a",
+            "f7899b45-d189-4f91-84b8-8e7a1ef26818",
+            "5fc6aea2-fc83-40b7-ab1b-9102d9f8c12a",
+            "58410f1f-a2ad-4b38-a22e-1b0ade2912e3",
+            "6f6cf00a-ec4b-4213-b8d7-f7d21a82e0c8",
+            "983131e8-9af3-4b1a-b619-9314d5e9e32c"
+        ],
+        "store": [
+            "32fc4037-fab8-461a-ba1f-79578c925948",
+            "2b2e5f39-e698-4b53-993c-bae598acf974",
+            "be8add7d-495b-49ee-a2fd-10ae20583829",
+            "1c430f11-c457-4892-af26-ddf8644cbcec"
+        ],
+        "controller": [
+            "635bd93a-bb2b-40ad-9345-c63a14c980a6"
+        ],
+        "model": [
+            "48e192ea-b53a-425c-80f2-356f33c74065",
+            "64bbf9ac-05e1-4976-abed-7a077df87d92",
+            "a171d077-fc7d-4a4c-9305-ed269d0df20f"
+        ],
+        "resource": [
+            "fb6a004a-c407-445b-afda-dd6e57584b20",
+            "279c8235-c015-4638-aa36-cce00b2d2bf0",
+            "ecbdd1ed-db44-450f-95ad-74e1b04d1d22",
+            "768016dd-8084-4352-ab9c-14e2f72f1e6c"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}

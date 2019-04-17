@@ -1,0 +1,56 @@
+{
+    "name": "Upload",
+    "settings": {
+        "cmd": {
+            "license": "commercial",
+            "cmdVersion": "6.6.0.13",
+            "frameworkVersion": "6.6.0.258"
+        },
+        "urlPrefixTemplate": "http://localhost:{port}/{path}",
+        "urlPrefix": "http://localhost:61554/",
+        "canvasControls": {
+            "viewportSize": {
+                "name": "Auto Expand",
+                "builtIn": true,
+                "height": null,
+                "width": null
+            }
+        },
+        "exportPath": "",
+        "spacesToIndent": 4,
+        "sdkPath": "",
+        "lineEnding": "CRLF",
+        "genTimestamps": false,
+        "cacheBust": false,
+        "buildShouldOverwriteIndex": true,
+        "generateArchitectVersion": true,
+        "lastBuildSelection": {
+            "value": "webBuild",
+            "display": "Build web app",
+            "buildPlatform": false
+        }
+    },
+    "xdsVersion": "4.2.4",
+    "xdsBuild": 389,
+    "schemaVersion": 1,
+    "upgradeVersion": 310000000001,
+    "framework": "ext66",
+    "viewOrderMap": {
+        "view": [
+            "dfdc1183-8b56-4227-be8a-f67876950d8a",
+            "8b5ea9e8-0d22-4e7f-b401-a21842a38b62",
+            "0aca5105-267a-486a-bed4-c10ae6439215"
+        ],
+        "store": [],
+        "controller": [],
+        "model": [],
+        "resource": [
+            "d5e2caef-26c7-4c15-adf6-da673b58f13e",
+            "c4e66612-118a-49cb-8c26-128f037036ca",
+            "956edd88-8146-4815-a0a7-04fd2ad39786"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}

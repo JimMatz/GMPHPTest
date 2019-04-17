@@ -1,0 +1,28 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "winhelp",
+        "designer|userClassName": "WinHelp",
+        "height": 729,
+        "html": "<h1>Aging Review (Version 2a) </h1>  <p> This Aging Review is based on Region with the ability to change the aging bucktest to a date in the future (As of Date). <br> <br>     The Total at the top of the grid should be close to the same as the Aging Buckets as currently defined. There may be slight differences based on selection criteria used.     <br>     <br>     You can hide/show columns, move columns, change columns size, sort, and filter on your requirments.  The formating and sorting is saved so it will display the same the next time you display this grid of data.       <br>     <br>     You have the option to change the as of date, by selecting the date picker or simply typing the as of date. You can type the date in any valid date format but the date will always appear in YYYY-mm-dd format (2019-03-26).     <br>     <br>You will need to press the reload data button when the date is changed (you will be prompted as a reminder).      </p> <h2>Default options</h2> You have the option to select specific areas to display on grid and the other grids in this application.       <h4>Aging Bucket Options</h4> <p>Selecting or deselecting the aging buckets displayed will help eliminate some of the clutter on the the pages. </p> Aging Buckets <ul>     <li>Credits</li>     <li>Current</li>     <li>1-15 Days </li>     <li>16-30 Days</li>     <li>31-60 Days</li>     <li>61-90 Days</li>     <li>Over 90 Days</li> </ul> <h4>Regions</h4> Regions are dynamic based on current system setup.  Select as many Regions as you want displayed  <p>The screen will reload with the new options when the default page is closed</p>",
+        "title": "My Window",
+        "width": 990
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "html": "string",
+        "title": "string",
+        "width": "auto"
+    },
+    "name": "MyWindow",
+    "designerId": "58410f1f-a2ad-4b38-a22e-1b0ade2912e3",
+    "viewControllerInstanceId": "983131e8-9af3-4b1a-b619-9314d5e9e32c",
+    "viewModelInstanceId": "6f6cf00a-ec4b-4213-b8d7-f7d21a82e0c8"
+}

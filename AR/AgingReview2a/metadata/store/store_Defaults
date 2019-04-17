@@ -1,0 +1,67 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": true,
+        "autoSync": true,
+        "designer|userClassName": "store_Defaults",
+        "model": "modelDefaults",
+        "statefulFilters": true,
+        "storeId": "store_Defaults"
+    },
+    "configAlternates": {
+        "autoLoad": "boolean",
+        "autoSync": "boolean",
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string",
+        "statefulFilters": "boolean"
+    },
+    "name": "store_Rgns2",
+    "designerId": "be8add7d-495b-49ee-a2fd-10ae20583829",
+    "configMeta": {
+        "statefulFilters": {
+            "bindDeep": true
+        }
+    },
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "url": "/Gemini/AR/getAr_Defaults.php?DB=GI"
+            },
+            "configAlternates": {
+                "url": "string"
+            },
+            "name": "MyAjaxProxy",
+            "designerId": "460f4c26-2da9-4081-a834-57f66b2d15c5",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "root"
+                    },
+                    "configAlternates": {
+                        "rootProperty": "string"
+                    },
+                    "name": "MyJsonReader",
+                    "designerId": "4d0f4562-1080-48ac-aab0-558a6f6698af"
+                }
+            ]
+        }
+    ]
+}

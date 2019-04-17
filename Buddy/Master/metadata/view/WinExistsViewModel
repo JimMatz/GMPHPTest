@@ -1,0 +1,53 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "winexists",
+        "designer|userClassName": "WinExistsViewModel"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
+    "designerId": "fa7f199e-211f-4db8-93fb-907baf63e04a",
+    "cn": [
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "data": [
+                    "[{\"ORDERNUM\":241,\"QTY\":744,\"SCANCNT\":44,\"LASTSCAN\":\"1/21/2014\"},{\"ORDERNUM\":18,\"QTY\":683,\"SCANCNT\":51,\"LASTSCAN\":\"3/7/2013\"},{\"ORDERNUM\":234,\"QTY\":514,\"SCANCNT\":342,\"LASTSCAN\":\"6/18/2003\"},{\"ORDERNUM\":736,\"QTY\":813,\"SCANCNT\":723,\"LASTSCAN\":\"2/27/2013\"},{\"ORDERNUM\":982,\"QTY\":248,\"SCANCNT\":280,\"LASTSCAN\":\"6/25/2009\"},{\"ORDERNUM\":985,\"QTY\":91,\"SCANCNT\":327,\"LASTSCAN\":\"1/9/2005\"},{\"ORDERNUM\":187,\"QTY\":507,\"SCANCNT\":730,\"LASTSCAN\":\"7/12/2010\"},{\"ORDERNUM\":703,\"QTY\":655,\"SCANCNT\":132,\"LASTSCAN\":\"4/18/2014\"},{\"ORDERNUM\":529,\"QTY\":596,\"SCANCNT\":32,\"LASTSCAN\":\"5/10/2014\"},{\"ORDERNUM\":830,\"QTY\":700,\"SCANCNT\":741,\"LASTSCAN\":\"10/17/2008\"},{\"ORDERNUM\":915,\"QTY\":923,\"SCANCNT\":175,\"LASTSCAN\":\"7/16/2004\"},{\"ORDERNUM\":164,\"QTY\":973,\"SCANCNT\":56,\"LASTSCAN\":\"3/22/2001\"},{\"ORDERNUM\":91,\"QTY\":927,\"SCANCNT\":214,\"LASTSCAN\":\"7/8/2014\"},{\"ORDERNUM\":998,\"QTY\":866,\"SCANCNT\":894,\"LASTSCAN\":\"11/14/2013\"},{\"ORDERNUM\":149,\"QTY\":506,\"SCANCNT\":498,\"LASTSCAN\":\"2/7/2011\"},{\"ORDERNUM\":252,\"QTY\":529,\"SCANCNT\":927,\"LASTSCAN\":\"5/7/2013\"},{\"ORDERNUM\":206,\"QTY\":361,\"SCANCNT\":390,\"LASTSCAN\":\"5/26/2009\"},{\"ORDERNUM\":179,\"QTY\":519,\"SCANCNT\":796,\"LASTSCAN\":\"6/1/2011\"},{\"ORDERNUM\":905,\"QTY\":204,\"SCANCNT\":740,\"LASTSCAN\":\"1/8/2004\"},{\"ORDERNUM\":490,\"QTY\":656,\"SCANCNT\":339,\"LASTSCAN\":\"6/12/2010\"},{\"ORDERNUM\":203,\"QTY\":974,\"SCANCNT\":410,\"LASTSCAN\":\"4/28/2007\"},{\"ORDERNUM\":343,\"QTY\":292,\"SCANCNT\":946,\"LASTSCAN\":\"3/16/2008\"},{\"ORDERNUM\":196,\"QTY\":602,\"SCANCNT\":633,\"LASTSCAN\":\"1/26/2003\"},{\"ORDERNUM\":543,\"QTY\":900,\"SCANCNT\":898,\"LASTSCAN\":\"9/26/2002\"},{\"ORDERNUM\":71,\"QTY\":950,\"SCANCNT\":802,\"LASTSCAN\":\"6/27/2005\"},{\"ORDERNUM\":764,\"QTY\":364,\"SCANCNT\":691,\"LASTSCAN\":\"10/18/2005\"},{\"ORDERNUM\":382,\"QTY\":7,\"SCANCNT\":485,\"LASTSCAN\":\"8/13/2007\"},{\"ORDERNUM\":534,\"QTY\":600,\"SCANCNT\":400,\"LASTSCAN\":\"5/6/2001\"},{\"ORDERNUM\":714,\"QTY\":312,\"SCANCNT\":202,\"LASTSCAN\":\"1/17/2006\"},{\"ORDERNUM\":868,\"QTY\":73,\"SCANCNT\":392,\"LASTSCAN\":\"7/14/2011\"}]"
+                ],
+                "model": "modelReview",
+                "name": "modelReviews"
+            },
+            "configAlternates": {
+                "data": "array",
+                "model": "model",
+                "name": "string"
+            },
+            "name": "modelReviews",
+            "designerId": "bb1c960f-b031-43b6-bbfb-4685f0c35526",
+            "cn": [
+                {
+                    "type": "Ext.data.proxy.Memory",
+                    "reference": {
+                        "name": "proxy",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyMemoryProxy1",
+                    "designerId": "24323d2c-5ad8-4d9e-a879-62c1b3f3ea79"
+                }
+            ]
+        }
+    ]
+}

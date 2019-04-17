@@ -1,0 +1,35 @@
+.child-row .x-grid-cell { 
+    background-color: #ffe2e2 !important; 
+    
+} 
+
+.adult-row .x-grid-cell { 
+    background-color: #e2ffe2 !important; 
+    color: #090; 
+}
+.p1-row .x-grid-cell { 
+    background-color: #fed0a3 !important; 
+    color: black; 
+    
+}
+.p2-row .x-grid-cell { 
+    background-color: #fee2a3 !important; 
+    color: black; 
+    
+}
+.p3-row .x-grid-cell { 
+    background-color: #919fd3 !important; 
+    color: black; 
+     
+}
+.p4-row .x-grid-cell { 
+    background-color: #85ebcd !important; 
+    color: black; 
+     
+}
+.x-grid3-hd-row .x-filtered-column{
+    color: red;
+}
+.x-grid3-hd-row .x-grouped-column{
+    color: red;
+}

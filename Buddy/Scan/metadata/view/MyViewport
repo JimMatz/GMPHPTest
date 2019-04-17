@@ -1,0 +1,982 @@
+{
+    "type": "Ext.container.Viewport",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|initialView": true,
+        "designer|userAlias": "myviewport",
+        "designer|userClassName": "MyViewport",
+        "height": 250,
+        "id": "btnGreen",
+        "layout": "fit",
+        "width": 600
+    },
+    "configAlternates": {
+        "designer|initialView": "boolean",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "layout": "string",
+        "width": "auto",
+        "id": "string"
+    },
+    "name": "MyViewport",
+    "designerId": "e66be0ce-473f-43ed-a2d5-5e2a50932b72",
+    "viewControllerInstanceId": "451b06a7-1bd5-44e0-b50d-e82c9a65d53d",
+    "viewModelInstanceId": "3f3b656a-81db-4344-b45b-6be1a1017ba5",
+    "cn": [
+        {
+            "type": "Ext.panel.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "id": "pnlMain",
+                "layout": "accordion",
+                "title": "Buddy Check Scan"
+            },
+            "configAlternates": {
+                "layout": "string",
+                "title": "string",
+                "id": "string"
+            },
+            "name": "MyPanel1",
+            "designerId": "ac7417af-e7ae-40bf-ae92-1325cda1324a",
+            "cn": [
+                {
+                    "type": "Ext.panel.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "height": 143,
+                        "resizable": true,
+                        "scrollable": true,
+                        "width": 900
+                    },
+                    "configAlternates": {
+                        "height": "auto",
+                        "layout|region": "string",
+                        "resizable": "boolean",
+                        "scrollable": "auto",
+                        "width": "auto"
+                    },
+                    "name": "MyPanel",
+                    "designerId": "b0ecd0aa-5cbe-406c-85d0-9793d21f7a03",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "allowBlank": false,
+                                "fieldLabel": "Order",
+                                "id": "ord",
+                                "padding": 20,
+                                "selectOnFocus": true
+                            },
+                            "configAlternates": {
+                                "fieldLabel": "string",
+                                "padding": "auto",
+                                "allowBlank": "boolean",
+                                "id": "string",
+                                "selectOnFocus": "boolean"
+                            },
+                            "name": "MyTextField1",
+                            "designerId": "027a4f0f-03b1-436e-8fdc-2a9138e76e07",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onOrdBlur",
+                                        "implHandler": [
+                                            "ord = component.value;",
+                                            "Ext.Ajax.request({",
+                                            "        url: '/Gemini/Buddy/ScanTotal.php?ORD=' + ord  ,",
+                                            "        method: 'GET',",
+                                            "        async: false,",
+                                            "        success: function(response, opts) {",
+                                            "            //  console.log(response);",
+                                            "            var obj = response.responseText;",
+                                            "              console.dir(obj);",
+                                            "           // Ext.getStore('MyJsonStore').load();",
+                                            "            Ext.getCmp('qty').setValue(obj);",
+                                            "        },",
+                                            "",
+                                            "        failure: function(response, opts) {",
+                                            "            console.log(response);",
+                                            "          //  console.log('server-side failure with status code ' + response.status);",
+                                            "        }",
+                                            "    });",
+                                            "",
+                                            "component.setReadOnly(true);",
+                                            "",
+                                            "Ext.Ajax.request({",
+                                            "        url: '/Gemini/Buddy/getCust.php?ORD=' + ord  ,",
+                                            "        method: 'GET',",
+                                            "        async: false,",
+                                            "        success: function(response, opts) {",
+                                            "            //  console.log(response);",
+                                            "            var obj = response.responseText;",
+                                            "              console.dir(obj);",
+                                            "           // Ext.getStore('MyJsonStore').load();",
+                                            "            Ext.getCmp('pnlMain').setTitle('Buddy Check Scan for ' + obj);",
+                                            "        },",
+                                            "",
+                                            "        failure: function(response, opts) {",
+                                            "            console.log(response);",
+                                            "          //  console.log('server-side failure with status code ' + response.status);",
+                                            "        }",
+                                            "    });",
+                                            "Ext.Ajax.request({",
+                                            "        url: '/Gemini/Buddy/getNotes.php?ORD=' + ord  ,",
+                                            "        method: 'GET',",
+                                            "        async: false,",
+                                            "        success: function(response, opts) {",
+                                            "            //  console.log(response);",
+                                            "            var obj = response.responseText;",
+                                            "              console.dir(obj);",
+                                            "           // Ext.getStore('MyJsonStore').load();",
+                                            "            Ext.getCmp('ordNotes').setHtml(obj);",
+                                            "        },",
+                                            "",
+                                            "        failure: function(response, opts) {",
+                                            "            console.log(response);",
+                                            "          //  console.log('server-side failure with status code ' + response.status);",
+                                            "        }",
+                                            "    });",
+                                            "",
+                                            "  Ext.Ajax.request({",
+                                            "        url: '/Gemini/Buddy/ScanCount.php?ORD=' + ord  ,",
+                                            "        method: 'GET',",
+                                            "        async: false,",
+                                            "        success: function(response, opts) {",
+                                            "            //  console.log(response);",
+                                            "            var obj = response.responseText;",
+                                            "              console.dir(obj);",
+                                            "           // Ext.getStore('MyJsonStore').load();",
+                                            "            Ext.getCmp('xof').setValue(obj);",
+                                            "        },",
+                                            "",
+                                            "        failure: function(response, opts) {",
+                                            "            console.log(response);",
+                                            "          //  console.log('server-side failure with status code ' + response.status);",
+                                            "        }",
+                                            "    });",
+                                            "",
+                                            "",
+                                            "if (parseInt(Ext.getCmp('xof').value) !== parseInt(Ext.getCmp('qty').value)){",
+                                            "    Ext.getCmp('btnRed').setVisible(true);",
+                                            "    Ext.getCmp('btnGrn').setVisible(false);",
+                                            "} else {",
+                                            "    Ext.getCmp('btnRed').setVisible(false);",
+                                            "    Ext.getCmp('btnGrn').setVisible(true);",
+                                            "}",
+                                            "Ext.getStore('storeD').load({",
+                                            "    params: {",
+                                            "        ORD: ord",
+                                            "    }",
+                                            "});",
+                                            ""
+                                        ],
+                                        "name": "blur",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onOrdBlur",
+                                    "designerId": "589ec0b3-2c25-4b71-b869-cd0fcee99f3d"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "allowBlank": false,
+                                "fieldLabel": "Barcode",
+                                "id": "bc",
+                                "padding": 20,
+                                "selectOnFocus": true
+                            },
+                            "configAlternates": {
+                                "allowBlank": "boolean",
+                                "fieldLabel": "string",
+                                "id": "string",
+                                "padding": "auto",
+                                "selectOnFocus": "boolean"
+                            },
+                            "name": "MyTextField",
+                            "designerId": "bfb2a07b-674d-4351-a282-40582d8e558a",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onTextfieldBlur",
+                                        "implHandler": [
+                                            "var ord = Ext.getCmp('ord').value;",
+                                            "var v = component.value;",
+                                            "Ext.getCmp('msg1').setValue('');",
+                                            "Ext.getCmp('btnReset').setVisible(false);",
+                                            "",
+                                            "Ext.Ajax.request({",
+                                            "    url: '/Gemini/Buddy/ScanSet.php?ORD=' + ord + '&V=' + v ,",
+                                            "    method: 'GET',",
+                                            "    async: false,",
+                                            "    success: function(response, opts) {",
+                                            "        //  console.log(response);",
+                                            "        var obj = response.responseText;",
+                                            "        console.dir(obj);",
+                                            "        Ext.getCmp('msg1').setValue(obj);",
+                                            "        if (obj == 'OK'){",
+                                            "            Ext.getCmp('bc').setValue('');",
+                                            "",
+                                            "            //",
+                                            "        }",
+                                            "        if (obj.substring(0,3) == 'Row'){",
+                                            "            Ext.getCmp('btnReset').setVisible(true);",
+                                            "",
+                                            "        }",
+                                            "    },",
+                                            "",
+                                            "    failure: function(response, opts) {",
+                                            "        console.log(response);",
+                                            "        //  console.log('server-side failure with status code ' + response.status);",
+                                            "    }",
+                                            "});",
+                                            "",
+                                            "Ext.Ajax.request({",
+                                            "    url: '/Gemini/Buddy/ScanCount.php?ORD=' + ord  ,",
+                                            "    method: 'GET',",
+                                            "    async: false,",
+                                            "    success: function(response, opts) {",
+                                            "        //  console.log(response);",
+                                            "        var obj = response.responseText;",
+                                            "        console.dir(obj);",
+                                            "        // Ext.getStore('MyJsonStore').load();",
+                                            "        Ext.getCmp('xof').setValue(obj);",
+                                            "    },",
+                                            "",
+                                            "    failure: function(response, opts) {",
+                                            "        console.log(response);",
+                                            "        //  console.log('server-side failure with status code ' + response.status);",
+                                            "    }",
+                                            "});",
+                                            "",
+                                            "",
+                                            "if (parseInt(Ext.getCmp('xof').value) !== parseInt(Ext.getCmp('qty').value)){",
+                                            "    Ext.getCmp('btnRed').setVisible(true);",
+                                            "    Ext.getCmp('btnGrn').setVisible(false);",
+                                            "} else {",
+                                            "    Ext.getCmp('btnRed').setVisible(false);",
+                                            "    Ext.getCmp('btnGrn').setVisible(true);",
+                                            "}",
+                                            "Ext.getStore('storeD').load({",
+                                            "    params: {",
+                                            "        ORD: ord",
+                                            "    }",
+                                            "});",
+                                            "",
+                                            "if (Ext.getCmp('btnReset').isVisible){",
+                                            "    //  Ext.getCmp('btnReset').focus();",
+                                            "} else {",
+                                            "",
+                                            "}",
+                                            "Ext.getCmp('bc').focus();"
+                                        ],
+                                        "name": "blur",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onTextfieldBlur",
+                                    "designerId": "b5e19bad-0d2f-4b0d-8eb0-36431c370226"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "hidden": true,
+                                "id": "btnReset",
+                                "text": "Reset Scan"
+                            },
+                            "configAlternates": {
+                                "hidden": "boolean",
+                                "id": "string",
+                                "text": "string"
+                            },
+                            "name": "MyButton",
+                            "designerId": "ce3ce7a0-7116-425e-971c-983d15e3fce3",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onBtnResetClick",
+                                        "implHandler": [
+                                            "var ord = Ext.getCmp('ord').value;",
+                                            "var v = Ext.getCmp('bc').value;",
+                                            "Ext.getCmp('msg1').setValue('');",
+                                            "",
+                                            "",
+                                            "        Ext.Ajax.request({",
+                                            "        url: '/Gemini/Buddy/ScanReset.php?ORD=' + ord + '&V=' + v ,",
+                                            "        method: 'GET',",
+                                            "        async: false,",
+                                            "        success: function(response, opts) {",
+                                            "            //  console.log(response);",
+                                            "            var obj = response.responseText;",
+                                            "              console.dir(obj);",
+                                            "            Ext.getCmp('msg1').setValue(obj);",
+                                            "           if (obj == 'OK'){",
+                                            "               Ext.getCmp('bc').setValue('');",
+                                            "              //",
+                                            "           }",
+                                            "        },",
+                                            "",
+                                            "        failure: function(response, opts) {",
+                                            "            console.log(response);",
+                                            "          //  console.log('server-side failure with status code ' + response.status);",
+                                            "        }",
+                                            "    });",
+                                            "",
+                                            "    Ext.Ajax.request({",
+                                            "        url: '/Gemini/Buddy/ScanCount.php?ORD=' + ord  ,",
+                                            "        method: 'GET',",
+                                            "        async: false,",
+                                            "        success: function(response, opts) {",
+                                            "            //  console.log(response);",
+                                            "            var obj = response.responseText;",
+                                            "              console.dir(obj);",
+                                            "           // Ext.getStore('MyJsonStore').load();",
+                                            "            Ext.getCmp('xof').setValue(obj);",
+                                            "        },",
+                                            "",
+                                            "        failure: function(response, opts) {",
+                                            "            console.log(response);",
+                                            "          //  console.log('server-side failure with status code ' + response.status);",
+                                            "        }",
+                                            "    });",
+                                            "",
+                                            "",
+                                            "if (parseInt(Ext.getCmp('xof').value) !== parseInt(Ext.getCmp('qty').value)){",
+                                            "    Ext.getCmp('btnRed').setVisible(true);",
+                                            "    Ext.getCmp('btnGrn').setVisible(false);",
+                                            "} else {",
+                                            "    Ext.getCmp('btnRed').setVisible(false);",
+                                            "    Ext.getCmp('btnGrn').setVisible(true);",
+                                            "}",
+                                            "Ext.getStore('storeD').load({",
+                                            "    params: {",
+                                            "        ORD: ord",
+                                            "    }",
+                                            "});",
+                                            "Ext.getCmp('btnReset').setVisible(false);",
+                                            "Ext.getCmp('bc').focus();"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onBtnResetClick",
+                                    "designerId": "e74f6939-c732-4d04-81ea-f4fce7e95517"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.form.field.Number",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "id": "xof",
+                                "labelAlign": "right",
+                                "padding": 10,
+                                "readOnly": true,
+                                "width": 50
+                            },
+                            "configAlternates": {
+                                "id": "string",
+                                "labelAlign": "string",
+                                "padding": "auto",
+                                "readOnly": "boolean",
+                                "width": "auto"
+                            },
+                            "name": "MyNumberField",
+                            "designerId": "61c9eae0-9da5-4fb7-a391-183ff9ec33ba"
+                        },
+                        {
+                            "type": "Ext.form.field.Number",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Of",
+                                "id": "qty",
+                                "labelWidth": 25,
+                                "padding": 10,
+                                "readOnly": true,
+                                "width": 75
+                            },
+                            "configAlternates": {
+                                "fieldLabel": "string",
+                                "id": "string",
+                                "labelWidth": "number",
+                                "padding": "auto",
+                                "readOnly": "boolean",
+                                "width": "auto"
+                            },
+                            "name": "MyNumberField1",
+                            "designerId": "c24b61f5-9c3f-4494-9190-526b4bab8584"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "id": "msg1",
+                                "readOnly": true,
+                                "width": 600
+                            },
+                            "configAlternates": {
+                                "id": "string",
+                                "readOnly": "boolean",
+                                "width": "auto"
+                            },
+                            "name": "MyTextField2",
+                            "designerId": "59ff8f44-dfdb-45d7-bed5-e0ff12c6ad64"
+                        },
+                        {
+                            "type": "Ext.form.field.Display",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "hidden": true,
+                                "id": "btnGrn",
+                                "readOnly": true,
+                                "value": "<img src='../button_Green.png'>"
+                            },
+                            "configAlternates": {
+                                "hidden": "boolean",
+                                "id": "string",
+                                "readOnly": "boolean",
+                                "value": "string"
+                            },
+                            "name": "MyDisplayField",
+                            "designerId": "bc073170-91f5-4384-84b6-9e6e7a1dc038"
+                        },
+                        {
+                            "type": "Ext.form.field.Display",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "hidden": true,
+                                "id": "btnRed",
+                                "readOnly": true,
+                                "value": "<img src='../button_Red.png'>"
+                            },
+                            "configAlternates": {
+                                "value": "string",
+                                "hidden": "boolean",
+                                "id": "string",
+                                "readOnly": "boolean"
+                            },
+                            "name": "MyDisplayField1",
+                            "designerId": "354d2e90-e0f3-461a-8c7d-7bca24937112"
+                        },
+                        {
+                            "type": "Ext.form.Label",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "html": "<b>Some Text </b><br>Second Line",
+                                "id": "ordNotes"
+                            },
+                            "configAlternates": {
+                                "html": "string",
+                                "id": "string"
+                            },
+                            "name": "MyLabel",
+                            "designerId": "73165483-052d-4774-b2aa-465529c6719f"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "columnLines": true,
+                        "height": 600,
+                        "resizable": true,
+                        "store": "storeD",
+                        "title": "Review"
+                    },
+                    "configAlternates": {
+                        "columnLines": "boolean",
+                        "height": "auto",
+                        "resizable": "boolean",
+                        "store": "store",
+                        "title": "string"
+                    },
+                    "name": "MyGridPanel",
+                    "designerId": "f07357c3-daab-4744-9fb2-e97c2cbddc62",
+                    "cn": [
+                        {
+                            "type": "Ext.grid.column.Number",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "CMPSEQ",
+                                "text": "Seq",
+                                "width": 74
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string",
+                                "width": "auto"
+                            },
+                            "name": "MyNumberColumn1",
+                            "designerId": "16817167-c077-4cd0-abc6-690d83807776"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "CMPID",
+                                "text": "ID",
+                                "width": 48
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string",
+                                "width": "auto"
+                            },
+                            "name": "MyColumn",
+                            "designerId": "9e29c272-dc5c-4f36-8a36-ea3b65ae0449"
+                        },
+                        {
+                            "type": "Ext.grid.column.Number",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "SEQID",
+                                "text": "#",
+                                "width": 56
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string",
+                                "width": "auto"
+                            },
+                            "name": "MyNumberColumn",
+                            "designerId": "fd8fe3d7-92c5-47e4-8b84-613607ebc452"
+                        },
+                        {
+                            "type": "Ext.grid.column.Check",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "SEQSTAT",
+                                "text": "Scanned"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string",
+                                "checkedTooltip": "string"
+                            },
+                            "name": "MyCheck2",
+                            "designerId": "9bec9996-947f-4d5e-b073-7cf34c0e8374",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onCheckcolumnCheckChange",
+                                        "implHandler": [
+                                            "var ord = record.data.ORDERNUM;",
+                                            "var v = record.data.BC;",
+                                            "Ext.getCmp('msg1').setValue('');",
+                                            "",
+                                            "",
+                                            "Ext.Ajax.request({",
+                                            "    url: '/Gemini/Buddy/ScanReset.php?ORD=' + ord + '&V=' + v ,",
+                                            "    method: 'GET',",
+                                            "    async: false,",
+                                            "    success: function(response, opts) {",
+                                            "        //  console.log(response);",
+                                            "        var obj = response.responseText;",
+                                            "        console.dir(obj);",
+                                            "        Ext.getCmp('msg1').setValue(obj);",
+                                            "        if (obj == 'OK'){",
+                                            "            Ext.getCmp('bc').setValue('');",
+                                            "            //",
+                                            "        }",
+                                            "    },",
+                                            "",
+                                            "    failure: function(response, opts) {",
+                                            "        console.log(response);",
+                                            "        //  console.log('server-side failure with status code ' + response.status);",
+                                            "    }",
+                                            "});",
+                                            "",
+                                            "Ext.Ajax.request({",
+                                            "    url: '/Gemini/Buddy/ScanCount.php?ORD=' + ord  ,",
+                                            "    method: 'GET',",
+                                            "    async: false,",
+                                            "    success: function(response, opts) {",
+                                            "        //  console.log(response);",
+                                            "        var obj = response.responseText;",
+                                            "        console.dir(obj);",
+                                            "        // Ext.getStore('MyJsonStore').load();",
+                                            "        Ext.getCmp('xof').setValue(obj);",
+                                            "    },",
+                                            "",
+                                            "    failure: function(response, opts) {",
+                                            "        console.log(response);",
+                                            "        //  console.log('server-side failure with status code ' + response.status);",
+                                            "    }",
+                                            "});",
+                                            "",
+                                            "",
+                                            "if (parseInt(Ext.getCmp('xof').value) !== parseInt(Ext.getCmp('qty').value)){",
+                                            "    Ext.getCmp('btnRed').setVisible(true);",
+                                            "    Ext.getCmp('btnGrn').setVisible(false);",
+                                            "} else {",
+                                            "    Ext.getCmp('btnRed').setVisible(false);",
+                                            "    Ext.getCmp('btnGrn').setVisible(true);",
+                                            "}",
+                                            "Ext.getStore('storeD').load({",
+                                            "    params: {",
+                                            "        ORD: ord",
+                                            "    }",
+                                            "});",
+                                            ""
+                                        ],
+                                        "name": "checkchange",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onCheckcolumnCheckChange",
+                                    "designerId": "2a24c56f-f5cb-43fc-87a0-f67bba05f33d"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Date",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "SCANTS",
+                                "text": "Date"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string",
+                                "checkedTooltip": "string"
+                            },
+                            "name": "MyDateColumn",
+                            "designerId": "4fba0199-5b1a-4ca6-99be-722fb48ce1e7"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "SCANT",
+                                "text": "Time"
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string",
+                                "checkedTooltip": "string"
+                            },
+                            "name": "MyColumn2",
+                            "designerId": "44e082ee-aaf6-4080-8cb9-bc54e0ba0faa"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "SCANUSR",
+                                "text": "User ",
+                                "width": 87
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string",
+                                "width": "auto"
+                            },
+                            "name": "MyColumn1",
+                            "designerId": "a05769bf-eecc-426e-9f36-43ec5985934c"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "BC",
+                                "hidden": true,
+                                "text": "User ",
+                                "width": 87
+                            },
+                            "configAlternates": {
+                                "dataIndex": "datafield",
+                                "text": "string",
+                                "width": "auto",
+                                "hidden": "boolean"
+                            },
+                            "name": "MyColumn4",
+                            "designerId": "614500ec-1439-4d73-aec5-699d5f702d41"
+                        },
+                        {
+                            "type": "Ext.view.Table",
+                            "reference": {
+                                "name": "viewConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "width": 900
+                            },
+                            "configAlternates": {
+                                "width": "auto"
+                            },
+                            "name": "MyTable",
+                            "designerId": "fc0c7a09-db04-4a75-80df-e164573df218"
+                        },
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onGridpanelRowContextMenu",
+                                "implHandler": [
+                                    "data = record.data;",
+                                    "ord = data.ORDERNUM;",
+                                    "cmpseq = data.CMPSEQ;",
+                                    "seqid = data.SEQID;",
+                                    "bc = data.BC;",
+                                    "",
+                                    "console.log('row menu: ', bc);",
+                                    "    var menu_grid = new Ext.menu.Menu({ items:",
+                                    "            [",
+                                    "                { text: 'Reprint Label', handler: function() {",
+                                    "                    Ext.Ajax.request({",
+                                    "            url: '/Gemini/Buddy/print1.php?DB=GI&BC=' + bc,",
+                                    "            method: 'GET',",
+                                    "            async: false,",
+                                    "            success: function(response, opts) {",
+                                    "                //  console.log(response);",
+                                    "                var obj = response.responseText;",
+                                    "                console.dir(obj);",
+                                    "                // Ext.getStore('MyJsonStore').load();",
+                                    "               ",
+                                    "            },",
+                                    "",
+                                    "            failure: function(response, opts) {",
+                                    "                console.log(response);",
+                                    "                //  console.log('server-side failure with status code ' + response.status);",
+                                    "            }",
+                                    "        });",
+                                    "",
+                                    "                }",
+                                    "",
+                                    "                },",
+                                    "",
+                                    "            ]",
+                                    "",
+                                    "",
+                                    "                                                                   });",
+                                    " var position = [e.getX()-10, e.getY()-10];",
+                                    "          e.stopEvent();",
+                                    "          menu_grid.showAt(position);",
+                                    "",
+                                    ""
+                                ],
+                                "name": "rowcontextmenu",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onGridpanelRowContextMenu",
+                            "designerId": "36fe3c98-788a-472b-b395-32c65311a1d6"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.toolbar.Toolbar",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dock": "top"
+                    },
+                    "configAlternates": {
+                        "dock": "string"
+                    },
+                    "name": "MyToolbar",
+                    "designerId": "c9c64404-3d07-40be-9ecd-bdfa69af6068",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "text": "New Order"
+                            },
+                            "configAlternates": {
+                                "layout|flex": "number",
+                                "text": "string"
+                            },
+                            "name": "MyButton2",
+                            "designerId": "59532244-7086-4fef-83dc-d5df71555ef4",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onButtonClick",
+                                        "implHandler": [
+                                            "Ext.getCmp('ord').setReadOnly(false);",
+                                            "Ext.getCmp('ord').setValue(0);",
+                                            "Ext.getCmp('ord').focus();"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onButtonClick",
+                                    "designerId": "b60bc286-c053-44d2-9f36-eded13d3e33e"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
